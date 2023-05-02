@@ -14,7 +14,7 @@ const Register=()=>{
         <input type="text" name="name" placeholder="username" onChange={(e)=>n(e.target.value)}></input>
         <input type="text" name="mail" placeholder="Enter mail" onChange={(e)=>g(e.target.value)}></input>
         <input type="password" name="password" placeholder="password" onChange={(e)=>p(e.target.value)}></input>
-        <button onClick={A}>Register</button>    
+        <button onClick={A}>Submit</button>    
         </>
     )
 }
