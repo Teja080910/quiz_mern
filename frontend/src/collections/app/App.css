@@ -1,8 +1,10 @@
-.body
+.startback
 {
   height: 80vh;
   width: 100%;
-  background-image: url(/frontend/src/collections/photos/startdis.jpg);
+  background-image: url(startdis.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 80vh;
 }
 
 
