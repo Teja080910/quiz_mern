@@ -1,4 +1,38 @@
-.App {
+.startback
+{
+  height: 100vh;
+  width: 100%;
+  background-image: url(startdis.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +69,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
