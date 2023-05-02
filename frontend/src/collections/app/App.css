@@ -1,7 +1,8 @@
 .startback
 {
-  height: 80vh;
-  width: 100%;
+  margin: 5vh 5vh 0vh 5vh;
+  height: 95vh;
+  width: 95%;
   background-image: url(startdis.jpg);
   background-repeat: no-repeat;
   background-size: 100% 80vh;
