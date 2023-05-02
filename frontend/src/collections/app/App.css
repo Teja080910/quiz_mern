@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100vh;
 }
+/* button in start page */
 .stbtn
 {
   background-color: rgb(44, 44, 147);
@@ -14,6 +15,28 @@
   width: 20%;
   height: 10vh;
   border-radius: 50%;
+}
+/* login page */
+.btn1
+{
+  width: 50%;
+  height: 25vh;
+  background-image: url(coding.jpg);
+}
+.btn2
+{
+  width: 50%;
+  height: 25vh;
+}
+.btn3
+{
+  width: 50%;
+  height: 25vh;
+}
+.btn4
+{
+  width: 50%;
+  height: 25vh;
 }
 
 
