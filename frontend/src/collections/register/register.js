@@ -7,7 +7,7 @@ const Register=()=>{
     const [password,p]=useState("");
     const A=async()=>{
         const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password);
-        console.log(response.data);
+        console.log(responce.data);
     }
     return(
         <>

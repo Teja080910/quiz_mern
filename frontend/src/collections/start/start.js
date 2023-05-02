@@ -4,7 +4,7 @@ const Start=()=>
     return(
         <>
         <div className='startback'>
-            <div></div>
+            <div><button className='stbtn'>START</button></div>
         </div>
         </>
     )

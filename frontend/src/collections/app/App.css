@@ -6,6 +6,15 @@
   background-repeat: no-repeat;
   background-size: 100% 100vh;
 }
+.stbtn
+{
+  background-color: rgb(44, 44, 147);
+  color:aqua;
+  margin: 75vh 40% 15vh 40%;
+  width: 20%;
+  height: 10vh;
+  border-radius: 50%;
+}
 
 
 
