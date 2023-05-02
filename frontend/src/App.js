@@ -12,7 +12,7 @@ function App() {
         <a
           className="App-link"
           href="https://reactjs.org"
-          target="_blank"n3jhu3huru4hu
+          target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
