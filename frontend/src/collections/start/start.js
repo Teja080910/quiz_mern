@@ -3,7 +3,9 @@ const Start=()=>
 {
     return(
         <>
-        <div className='startback'></div>
+        <div className='startback'>
+            <div></div>
+        </div>
         </>
     )
 }
