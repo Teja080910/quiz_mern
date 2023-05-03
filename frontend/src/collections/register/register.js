@@ -8,6 +8,13 @@ const Register=()=>{
     const A=async()=>{
         const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password);
         console.log(responce.data);
+        if(responce.data)
+        {
+            alert("ok")
+        }
+        else{
+            alert("failed")
+        }
     }
     return(
         <>
@@ -19,3 +26,4 @@ const Register=()=>{
     )
 }
 export default Register;
+
