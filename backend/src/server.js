@@ -12,9 +12,8 @@ app.post('/register/:name/:gmail/:password/:cpassword',async(req,res)=>{
     const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
-app.get('/login',async(req,res)=>{
-    const details=await db.collection('userdata').find().toArray();
-    // res.send(details);
+app.get('/login/:mail/:password',async(req,res)=>{
+    const details=await db.collection('userdata').findOne({mail:req.params.gmail,password:req.params.password});
     res.json(details);
 })
 connectToDB(()=>{

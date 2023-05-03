@@ -7,14 +7,21 @@ const Login=()=>{
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const Show=async()=>{
-        const responce=await axios.post("http://localhost:8000/login/"+gmail+"/"+password);
-        console.log(responce.data);
+        const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
         if(responce.data)
         {
-            nav("/startp")
+            nav("/gamep")
         }
         else{
-            alert("failed")
+            alert("Please create account")
+        }
+    }
+    const Regi=async()=>{
+        nav("/register")
+    }
+    const Upadate=async()=>{
+        {
+            nav("/update")
         }
     }
     return(
@@ -33,10 +40,17 @@ const Login=()=>{
             </tr>
             <tr>
                 <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}}>
-                <button onClick={Show}Submit>Submit</button>
+                <button onClick={Show}>Submit</button>
                 </td>
             </tr>
-            
+            <tr>
+                <td>
+                    <button onClick={Regi}>New account</button>
+                </td>
+                <td>
+                    <button onClick={Upadate}>Forgot password</button>
+                </td>
+            </tr>
         </table>
         </div>    
         </>
