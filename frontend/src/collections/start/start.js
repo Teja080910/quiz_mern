@@ -5,7 +5,7 @@ const Start=()=>
     const move=useNavigate();
     const ready=async()=>
     {
-        move("/register");
+        move("/login");
     }
     return(
         <>

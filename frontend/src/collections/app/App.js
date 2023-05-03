@@ -7,10 +7,11 @@ import Gamep from '../gamep/gamep';
 function App() {
   return (
     <>
-    <Gamep/>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}></Route>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/gamep' element={<Gamep/>}/>
       <Route path='/register' element={<Register/>}></Route>
     </Routes>
     </BrowserRouter>
