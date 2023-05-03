@@ -20,9 +20,7 @@ const Login=()=>{
         nav("/register")
     }
     const Upadate=async()=>{
-        {
-            nav("/update")
-        }
+        nav("/update")
     }
     return(
         <>
@@ -31,23 +29,25 @@ const Login=()=>{
             <tr>
                 <td className="input">
                 <input type='mail' name='gmail' placeholder='Enter your mail' onChange={(e)=>sgmail(e.target.value)}></input>
-                </td><td></td>
+                </td>
             </tr>
             <tr>
                 <td className="input">
                 <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
-                </td><td></td>
+                </td>
             </tr>
             <tr>
                 <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}}>
                 <button onClick={Show}>Submit</button>
                 </td>
             </tr>
-            <tr>
+        </table>
+        <table style={{marginTop:'32%'}} className="tabledata" >
+        <tr>
                 <td>
                     <button onClick={Regi}>New account</button>
                 </td>
-                <td>
+                <td  align="right">
                     <button onClick={Upadate}>Forgot password</button>
                 </td>
             </tr>
