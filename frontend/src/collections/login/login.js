@@ -27,30 +27,37 @@ const Login=()=>{
         <div className="regi">
         <table className='tabledata'>
             <tr>
+            <td className="input">
+                <label for="gmail"><b>Gmail:: </b></label>
+            </td>
                 <td className="input">
                 <input type='mail' name='gmail' placeholder='Enter your mail' onChange={(e)=>sgmail(e.target.value)}></input>
                 </td>
             </tr>
             <tr>
+            <td className="input">
+                <label for="password"><b>Password:: </b></label>
+            </td>
                 <td className="input">
                 <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
                 </td>
             </tr>
             <tr>
-                <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}}>
-                <button onClick={Show}>Submit</button>
+                <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}} colSpan={2}>
+                <button style={{backgroundColor:"lightgreen", borderRadius:"20%"}} onClick={Show}><b>Login</b></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button  style={{backgroundColor:'yellow',borderColor:'ButtonShadow',marginBottom:'5vh'}} onClick={Regi}><b>New account</b></button>
+                </td>
+                <td  align="right">
+                    <button style={{backgroundColor:'orange',borderColor:'ButtonHighlight',marginBottom:'5vh'}} onClick={Upadate}><b>Forgot password</b></button>
                 </td>
             </tr>
         </table>
-        <table style={{marginTop:'32%'}} className="tabledata" >
-        <tr>
-                <td>
-                    <button onClick={Regi}>New account</button>
-                </td>
-                <td  align="right">
-                    <button onClick={Upadate}>Forgot password</button>
-                </td>
-            </tr>
+        <table className="tabledata1" >
+        
         </table>
         </div>    
         </>

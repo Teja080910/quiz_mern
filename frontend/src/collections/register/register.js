@@ -25,28 +25,40 @@ const Register=()=>{
         <table className='tabledata'>
             <tr>
                 <td className="input">
+                    <label for="name"><b>name:: </b></label>
+                </td>
+                <td className="input">
                 <input type='text' name='name' placeholder='Enter your full name' onChange={(e)=>sname(e.target.value)}></input>
-                </td><td></td>
+                </td>
             </tr>
             <tr>
+                <td className="input">
+                <label for="name"><b>Gmail:: </b></label>
+                </td>
                 <td className="input">
                 <input type='mail' name='gmail' placeholder='Enter your mail' onChange={(e)=>sgmail(e.target.value)}></input>
-                </td><td></td>
+                </td>
             </tr>
             <tr>
                 <td className="input">
+                <label for="name"><b>Password::</b></label>
+                </td>
+                <td className="input">
                 <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
-                </td><td></td>
+                </td>
             </tr>
             <tr>
+                <td className="input">
+                <label for="name"><b>confirm password::</b></label>
+                </td>
                 <td className="input">
                 <input type='password' name='cpassword' placeholder='Enter your confirm password' onChange={(e)=>scpassword(e.target.value)}></input>
                 </td>
             </tr>
           
             <tr>
-                <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}}>
-                <button onClick={Show}Submit>Submit</button>
+                <td className="input" style={{paddingBottom:'5vh'}} colSpan={2}>
+                <button style={{backgroundColor:'greenyellow'}} onClick={Show}><b>Submit</b></button>
                 </td>
             </tr>
             
