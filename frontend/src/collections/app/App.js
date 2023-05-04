@@ -8,6 +8,7 @@ import Reg from '../../sample';
 function App() {
   return (
     <>
+    <div className='header'></div>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Reg/>}/>
@@ -16,6 +17,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
     </Routes>
     </BrowserRouter>
+    <div className='footer'></div>
     </>
   );
 }

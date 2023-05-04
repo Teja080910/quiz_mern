@@ -6,6 +6,7 @@ const Login=()=>{
     const nav=useNavigate();
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
+    const [error,serror]=useState("");
     const Show=async()=>{
         const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
         if(responce.data)
@@ -13,7 +14,7 @@ const Login=()=>{
             nav("/gamep")
         }
         else{
-            alert("Please create account")
+            serror("password or mail incoorect")
         }
     }
     const Regi=async()=>{
@@ -42,8 +43,9 @@ const Login=()=>{
                 <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
                 </td>
             </tr>
+            <td style={{color:'orange-red'}} colSpan={2} align="center">{error}</td>
             <tr>
-                <td style={{paddingTop:"5vh",paddingBottom:'5vh',textAlign:"center"}} colSpan={2}>
+                <td style={{paddingTop:"4vh",paddingBottom:'5vh',textAlign:"center"}} colSpan={2}>
                 <button style={{backgroundColor:"lightgreen", borderRadius:"20%"}} onClick={Show}><b>Login</b></button>
                 </td>
             </tr>
@@ -55,10 +57,7 @@ const Login=()=>{
                     <button style={{backgroundColor:'orange',borderColor:'ButtonHighlight',marginBottom:'5vh'}} onClick={Upadate}><b>Forgot password</b></button>
                 </td>
             </tr>
-        </table>
-        <table className="tabledata1" >
-        
-        </table>
+        </table>        
         </div>    
         </>
     )
