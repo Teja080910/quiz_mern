@@ -21,9 +21,9 @@ app.get('/login/:mail/:password',async(req,res)=>{
     const details=await db.collection('userdata').findOne({mail:req.params.gmail,password:req.params.password});
     res.json(details);
 })
-app.post('/upadte/:password/:cpassword',async(req,res)=>
+app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
 {
-    const details=await db.collection('userdata').updateOne({password:req.params.password,cpassword:req.params.cpassword})
+    const details=await db.collection('userdata').updateOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
 // app.post('/sample/:question/:answer',async(req,res) => {
