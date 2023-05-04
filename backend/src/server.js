@@ -16,6 +16,11 @@ app.get('/login/:mail/:password',async(req,res)=>{
     const details=await db.collection('userdata').findOne({mail:req.params.gmail,password:req.params.password});
     res.json(details);
 })
+// app.post('/sample/:question/:answer',async(req,res) => {
+//     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer
+//     });
+//     res.json(details);
+// })
 app.post('/sample/:question/:answer',async(req,res) => {
     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer
     });
