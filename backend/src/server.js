@@ -32,7 +32,7 @@ app.post('/upadte/:password/:cpassword',async(req,res)=>
 //     res.json(details);
 // })
 app.post('/sample/:question/:answer',async(req,res) => {
-    const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer});
+    const details = await db.collection('entrdata').insertOne({question:req.params.question,answer:req.params.answer});
     res.json(details);
 })
 app.get('/delete',async(req,res)=>{
