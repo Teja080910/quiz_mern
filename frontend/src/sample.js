@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 const Reg=()=>{
-    const [g,t]=useState([]);
-    const [p,u]=useState([]);
+    const [g,t]=useState("");
+    const [p,u]=useState("");
     const name=async()=>{
         const responce=await axios.post("http://localhost:8000/sample/"+g+"/"+p);
         console.log(responce.data);
