@@ -43,7 +43,7 @@ const Login=()=>{
                 <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
                 </td>
             </tr>
-            <td style={{color:'orange-red'}} colSpan={2} align="center">{error}</td>
+            <td style={{color:'orangered'}} colSpan={2} align="center">{error}</td>
             <tr>
                 <td style={{paddingTop:"4vh",paddingBottom:'5vh',textAlign:"center"}} colSpan={2}>
                 <button style={{backgroundColor:"lightgreen", borderRadius:"20%"}} onClick={Show}><b>Login</b></button>
