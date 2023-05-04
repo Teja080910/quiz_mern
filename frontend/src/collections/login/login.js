@@ -14,7 +14,7 @@ const Login=()=>{
             nav("/gamep")
         }
         else{
-            serror("password or mail incoorect")
+            serror("password or mail incorrect")
         }
     }
     const Regi=async()=>{
