@@ -13,7 +13,7 @@ const Register=()=>{
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce1=await axios.get("http://localhost:8000/registercheck/"+gmail)
+            const responce1=await axios.get("http://localhost:8000/check/"+gmail)
             if(responce1.data)
             {
                 serr("Mail already Exist")

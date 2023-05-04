@@ -15,7 +15,7 @@ const Update=()=>{
             const responce1=await axios.get("http://localhost:8000/check/"+gmail);
         if(responce1.data)
         {
-            const responce=await axios.post("http://localhost:8000/update/"+password+"/"+cpassword)
+            const responce=await axios.post("http://localhost:8000/update/"+gmail+"/"+password+"/"+cpassword)
             console.log(responce)
             if(responce.data)
             {
