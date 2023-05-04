@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Update=()=>{
     const nav=useNavigate();
+    const [name,sname]=useState("");
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [cpassword,scpassword]=useState("");
@@ -15,7 +16,7 @@ const Update=()=>{
             const responce1=await axios.get("http://localhost:8000/check/"+gmail);
         if(responce1.data)
         {
-            const responce=await axios.post("http://localhost:8000/update/"+gmail+"/"+password+"/"+cpassword)
+            const responce=await axios.post("http://localhost:8000/update/"+name+"/"+gmail+"/"+password+"/"+cpassword)
             console.log(responce)
             if(responce.data)
             {
