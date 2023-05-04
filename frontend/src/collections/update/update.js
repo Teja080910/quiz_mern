@@ -4,16 +4,36 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Update=()=>{
     const nav=useNavigate();
-    const [mail,smail]=useState("");
+    const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [cpassword,scpassword]=useState("");
     const [err,serr]=useState("");
     const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const Updtshow=async()=>{
-        const responce1=await axios.get("http://localhost:8000/registercheck/"+mail);
+        if(emailtest.test(gmail))
+        {
+            const responce1=await axios.get("http://localhost:8000/check/"+gmail);
         if(responce1.data)
         {
-            const responce=await axios.post("http://localhost:8000/registercheck/"+mail+"/"+password+"/"+cpassword)
+            const responce=await axios.post("http://localhost:8000/update/"+password+"/"+cpassword)
+            console.log(responce)
+            if(responce.data)
+            {
+                nav('/login');
+            }
+            else
+            {
+                serr("Again change")
+            }
+        }
+        else
+        {
+            serr("Mail not found");
+        }
+        }
+        else
+        {
+            serr("Enter in mail formate")
         }
     }
     return(
@@ -25,7 +45,7 @@ const Update=()=>{
                     <label for="mail"><b>Gmail:: </b></label>
                 </td>
                 <td className="input">
-                <input type='mail' name='mail' placeholder='Enter email' onChange={(e)=>smail(e.target.value)}></input>
+                <input type='mail' name='mail' placeholder='Enter email' onChange={(e)=>sgmail(e.target.value)}></input>
                 </td>
             </tr>
             <tr>

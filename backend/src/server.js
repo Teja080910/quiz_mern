@@ -12,13 +12,18 @@ app.post('/register/:name/:gmail/:password/:cpassword',async(req,res)=>{
     const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
-app.get('/registercheck/:gamil',async(req,res)=>
+app.get('/check/:gmail',async(req,res)=>
 {
-    const details=await db.collection('userdata').findOne({gmail:req.params.gamil});
+    const details=await db.collection('userdata').findOne({gmail:req.params.gmail});
     res.json(details);
 })
 app.get('/login/:mail/:password',async(req,res)=>{
     const details=await db.collection('userdata').findOne({mail:req.params.gmail,password:req.params.password});
+    res.json(details);
+})
+app.post('/upadte/:password/:cpassword',async(req,res)=>
+{
+    const details=await db.collection('userdata').updateOne({password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
 // app.post('/sample/:question/:answer',async(req,res) => {
