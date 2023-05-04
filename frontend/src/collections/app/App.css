@@ -1,10 +1,35 @@
+/* head and foot */
+/* Header */
+.header {
+  background-color: #e0c2c2;
+  color: #fff;
+  padding: 4vh;
+}
+
+/* Footer */
+.footer {
+  background-color: #e0c2c2;
+  color: #fff;
+  padding: 2vh;
+  margin-top: -0.5%;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  header, footer {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+
 .startback
 {
-  height: 100vh;
+  height: 89vh;
   width: 100%;
   background-image: url(startdis.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 100% 89vh;
 }
 /* button */
 /* button in start page */
@@ -12,7 +37,7 @@
 {
   background-color: rgb(44, 44, 147);
   color:aqua;
-  margin: 75vh 40% 15vh 40%;
+  margin: 75vh 40% 0vh 40%;
   width: 20%;
   height: 10vh;
   border-radius: 50%;
@@ -21,7 +46,7 @@
 .regi
 {
   width: 100%;
-  height: 100vh;
+  height: 89vh;
   background-image: url(register.jpeg);
   background-size: 100% 100vh;
 }
@@ -35,14 +60,6 @@
   border: 5px solid rebeccapurple;
   opacity: 80%;
 }
-.tabledata1
-{
-  width: 22%;
-  position:absolute;
-  margin: 65vh 39% 5vh 39%;
-  border-radius: 10%;
-  opacity: 80%;
-}
 .input
 {
   padding-top: 5vh;
@@ -54,7 +71,6 @@
 .lbtn
 {
   width: 100%;
-  height: auto;
 }
 .lbtnr
 {
@@ -63,40 +79,50 @@
 .btn1
 {
   width: 50%;
-  height: 50vh;
+  height: 44.4vh;
   background-color: aqua;
   display: inline-flex;
   background-image: url(coding.jpg);
-  background-size: 100% 50vh;
+  background-size: 100% 44vh;
   background-repeat: no-repeat;
 }
 .btn2
 {
   display: inline-flex;
   width: 50%;
-  height: 50vh;
+  height: 44.4vh;
   background-color: aquamarine;
   background-image: url(sp.jpg);
-  background-size: 100% 50vh;
+  background-size: 100% 44vh;
   background-repeat: no-repeat;
 }
 .btn3
 {
   width: 50%;
-  height: 50vh;
+  height: 44.4vh;
   display: inline-block;
   background-image: url(CA.jpg);
-  background-size: 100% 50vh;
+  background-size: 100% 44vh;
   background-repeat: no-repeat;
 }
 .btn4
 {
   width: 50%;
-  height: 50vh;
+  height: 44.4vh;
   display: inline-block;
   background-image: url(entertainment.jpg);
-  background-size: 100% 50vh;
+  background-size: 100% 44vh;
   background-repeat: no-repeat;
+}
+/* game button */
+.gbtn
+{
+  position: absolute;
+  width: 10%;
+  height: 8vh;
+  margin: 21vh 20% 21vh 20%;
+  background-color:gold;
+  opacity: 90%;
 }
 
 

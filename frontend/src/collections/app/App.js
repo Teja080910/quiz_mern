@@ -7,6 +7,7 @@ import Gamep from '../gamep/gamep';
 function App() {
   return (
     <>
+    <div className='header'></div>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/>
@@ -15,6 +16,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
     </Routes>
     </BrowserRouter>
+    <div className='footer'></div>
     </>
   );
 }
