@@ -7,14 +7,22 @@ const Login=()=>{
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [error,serror]=useState("");
+    const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const Show=async()=>{
-        const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
-        if(responce.data)
+        if(emailtest.test(gmail))
+        {
+            const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
+            if(responce.data)
         {
             nav("/gamep")
         }
         else{
             serror("password or mail incorrect")
+        }
+        }
+        else
+        {
+            serror("Enter in email formate")
         }
     }
     const Regi=async()=>{

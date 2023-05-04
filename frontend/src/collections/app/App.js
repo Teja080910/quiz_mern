@@ -11,7 +11,7 @@ function App() {
     <div className='header'></div>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Reg/>}/>
+      <Route path='/' element={<Start/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/gamep' element={<Gamep/>}/>
       <Route path='/register' element={<Register/>}/>

@@ -8,15 +8,39 @@ const Register=()=>{
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [cpassword,scpassword]=useState("");
+    const [err,serr]=useState("");
+    const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const Show=async()=>{
-        const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password+"/"+cpassword);
-        console.log(responce.data);
-        if(responce.data)
+        if(emailtest.test(gmail))
         {
-            nav("/login")
+            const responce1=await axios.get("http://localhost:8000/registercheck/"+gmail)
+            if(responce1.data)
+            {
+                serr("Mail already Exist")
+            }
+            else
+            {
+                const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password+"/"+cpassword)
+                if(password === cpassword)
+                {
+                    if(responce.data)   
+                    {
+                        nav("/login")
+                    }
+                    else
+                    {
+                    serr("Error")
+                    }
+                }
+                else
+                {
+                    serr("Passwords Not Match")
+                }
+            }
         }
-        else{
-            alert("failed")
+        else
+        {
+            serr("Mail must be Email format")
         }
     }
     return(
@@ -55,13 +79,14 @@ const Register=()=>{
                 <input type='password' name='cpassword' placeholder='Enter your confirm password' onChange={(e)=>scpassword(e.target.value)}></input>
                 </td>
             </tr>
-          
+            <tr>
+                <td colSpan={2} style={{color:"red",paddingTop:'2vh'}} align="center"><b>{err}</b></td>
+            </tr>
             <tr>
                 <td className="input" style={{paddingBottom:'5vh'}} colSpan={2}>
                 <button style={{backgroundColor:'greenyellow'}} onClick={Show}><b>Submit</b></button>
                 </td>
             </tr>
-            
         </table>
         </div>    
         </>
