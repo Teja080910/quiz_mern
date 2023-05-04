@@ -31,8 +31,8 @@ app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
 //     });
 //     res.json(details);
 // })
-app.post('/sample/:question/:answer',async(req,res) => {
-    const details = await db.collection('entrdata').insertOne({question:req.params.question,answer:req.params.answer});
+app.post('/sample/:id/:answer',async(req,res) => {
+    const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer:req.params.answer});
     res.json(details);
 })
 app.get('/delete',async(req,res)=>{
