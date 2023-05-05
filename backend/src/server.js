@@ -92,6 +92,24 @@ app.get('/entertine',async(req,res)=>{
     const details=await db.collection('entrdata').find().toArray()
     res.json(details);
 })
+//input answer//
+app.post('/codingans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/currentans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/sportsans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/entertineans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+
 //delete data//
 app.get('/delete',async(req,res)=>{
     const details=await db.collection('sportsdata').deleteMany()
