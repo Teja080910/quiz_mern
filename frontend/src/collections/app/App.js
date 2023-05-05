@@ -12,7 +12,7 @@ import Entertine from '../entertinegame/entertinegame';
 import Adlog from '../adlog/adlog';
 import Gameinput from '../adlog/gameinput';
 import Adminlogin from '../adlog/adminlogin';
-import Errorpage from '../../error';
+import Errorpage from '../error/error';
 function App() {
   return (
     <>
