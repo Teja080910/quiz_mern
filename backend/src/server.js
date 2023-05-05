@@ -64,7 +64,7 @@ app.get('/coding/:question',async(req,res)=>{
     const details=await db.collection('codingdata').findOne({question:req.params.question})
     res.json(details);
 })
-app.get('/coding/:question',async(req,res)=>{
+app.get('/sports/:question',async(req,res)=>{
     const details=await db.collection('codingdata').findOne({question:req.params.question})
     res.json(details);
 })
