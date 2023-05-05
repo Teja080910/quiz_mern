@@ -65,15 +65,15 @@ app.get('/coding/:question',async(req,res)=>{
     res.json(details);
 })
 app.get('/entertine/:id',async(req,res)=>{
-    const details=await db.collection('codingdata').findOne({_id:req.params.id})
+    const details=await db.collection('entrdata').findOne({_id:req.params.id})
     res.json(details);
 })
 app.get('/sports/:id',async(req,res)=>{
-    const details=await db.collection('codingdata').findOne({_id:req.params.id})
+    const details=await db.collection('sportsdata').findOne({_id:req.params.id})
     res.json(details);
 })
 app.get('/current/:question',async(req,res)=>{
-    const details=await db.collection('codingdata').findOne({question:req.params.question})
+    const details=await db.collection('cafdata').findOne({question:req.params.question})
     res.json(details);
 })
 app.get('/coding',async(req,res)=>{
