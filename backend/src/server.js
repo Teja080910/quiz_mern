@@ -5,25 +5,13 @@ import { name } from 'ejs';
 const app=express();
 app.use(express.json());
 app.use(cors());
+//check server//
 app.get('/',(req,res)=>{
     res.send("server running")
 })
+//user data server//
 app.post('/register/:name/:gmail/:password/:cpassword',async(req,res)=>{
     const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
-    res.json(details);
-})
-// Admin data server//
-app.get('/adminlogin/:mail/:password',async(req,res)=>{
-    const details=await db.collection('admindata').findOne({mail:req.params.gmail,password:req.params.password});
-    res.json(details);
-})
-app.get('/admincheck/:gmail',async(req,res)=>
-{
-    const details=await db.collection('admindata').findOne({gmail:req.params.gmail});
-    res.json(details);
-})
-app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
-    const details=await db.collection('admindata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
 app.get('/check/:gmail',async(req,res)=>
@@ -40,11 +28,21 @@ app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
     const details=await db.collection('userdata').updateOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
-// app.post('/sample/:question/:answer',async(req,res) => {
-//     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer
-//     });
-//     res.json(details);
-// })
+// Admin data server//
+app.get('/adminlogin/:mail/:password',async(req,res)=>{
+    const details=await db.collection('admindata').findOne({mail:req.params.gmail,password:req.params.password});
+    res.json(details);
+})
+app.get('/admincheck/:gmail',async(req,res)=>
+{
+    const details=await db.collection('admindata').findOne({gmail:req.params.gmail});
+    res.json(details);
+})
+app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
+    const details=await db.collection('admindata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
+    res.json(details);
+})
+//game data//
 app.post('/coding/:question/:answer',async(req,res) => {
     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer});
     res.json(details);
@@ -61,6 +59,7 @@ app.post('/entertine/:id/:answer',async(req,res) => {
     const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer:req.params.answer});
     res.json(details);
 })
+//delete data//
 app.get('/delete',async(req,res)=>{
     const details=await db.collection('entrdata').deleteMany()
     .then((result)=>
