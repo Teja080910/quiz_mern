@@ -10,6 +10,7 @@ import Coding from '../codinggame/codinggame';
 import Current from '../currentgame/currentgame';
 import Sports from '../sportsgame/sportsgame';
 import Entertine from '../entertinegame/entertinegame';
+import Errorpage from '../collections/error';
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
       <Route path='/entertinegame' element={<Entertine/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
+      <Route path='/error' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter>
     <div className='footer'></div>
