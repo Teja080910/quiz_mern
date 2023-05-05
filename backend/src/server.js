@@ -64,19 +64,19 @@ app.get('/coding/:question',async(req,res)=>{
     const details=await db.collection('codingdata').findOne({question:req.params.question})
     res.json(details);
 })
-app.get('/sports/:question',async(req,res)=>{
-    const details=await db.collection('codingdata').findOne({question:req.params.question})
+app.get('/entertine/:id',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({_id:req.params.id})
     res.json(details);
 })
-app.get('/sports/:question',async(req,res)=>{
-    const details=await db.collection('codingdata').findOne({question:req.params.question})
+app.get('/sports/:id',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({_id:req.params.id})
     res.json(details);
 })
 app.get('/current/:question',async(req,res)=>{
     const details=await db.collection('codingdata').findOne({question:req.params.question})
     res.json(details);
 })
-app.get('/entertine',async(req,res)=>{
+app.get('/coding',async(req,res)=>{
     const details=await db.collection('codingdata').find().toArray()
     res.json(details);
 })

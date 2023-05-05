@@ -21,7 +21,7 @@ const Gameinput=()=>{
         }
     }
     const sports=async()=>{
-        const result=await axios.get("http://localhost:8000/sports/"+ques)
+        const result=await axios.get("http://localhost:8000/sports/"+id)
         if(result.data)
         {
             alert("question already exist")
@@ -34,7 +34,7 @@ const Gameinput=()=>{
         }
     }
     const current=async()=>{
-        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        const result=await axios.get("http://localhost:8000/current/"+ques)
         if(result.data)
         {
             alert("question already exist")
@@ -47,7 +47,7 @@ const Gameinput=()=>{
         }
     }
     const entertine=async()=>{
-        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        const result=await axios.get("http://localhost:8000/entertine/"+id)
         if(result.data)
         {
             alert("question already exist")
