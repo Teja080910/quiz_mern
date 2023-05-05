@@ -3,18 +3,20 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 const Coding=()=>
 {
-    const [data,sdata]=useState([]);
+    const [dat,sdata]=useState([]);
     const [crt,scrt]=useState("");
     const [c,sc]=useState(0);
-    const Marks=()=>
+    const [err,serr]=useState("");
+    const Marks=async()=>
     {
-        if(crt==="A folder of python modules")
+        const res=await axios.get("http://localhost:8000/coding/"+crt)
+        if(res.data)
         {
-            sc(c+2);
+            sc(c+1);
         }
         else
         {
-            sc(c-1)
+            serr("Wrong answer")
         }
     }
 
@@ -31,10 +33,10 @@ const Coding=()=>
     return(
         <>
         <div className="gameback">
-        <div className="scorebord"></div>
+        <div className="scorebord"><h1 style={{color:'red'}}>{crt}</h1></div>
         <div className="gamebord">
         {
-            data.map((teja)=>{
+            dat.map((teja)=>{
                return(
                 <>
                 <p><b>=> {teja.question}</b></p>
