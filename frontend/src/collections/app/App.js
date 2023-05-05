@@ -13,6 +13,7 @@ import Adlog from '../adlog/adlog';
 import Gameinput from '../adlog/gameinput';
 import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
+import Adminregister from '../register/adminregister';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
       <Route path='/' element={<Start/>}/> 
       <Route path='/adlog' element={<Adlog/>}/>
       <Route path='/adminlogin' element={<Adminlogin/>}/>
+      <Route path='/adminregister' element={<Adminregister/>}/>
       <Route path='/gameinput' element={<Gameinput/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/gamep' element={<Gamep/>}/>

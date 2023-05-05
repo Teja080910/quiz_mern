@@ -12,6 +12,20 @@ app.post('/register/:name/:gmail/:password/:cpassword',async(req,res)=>{
     const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
+// Admin data server//
+app.get('/adminlogin/:mail/:password',async(req,res)=>{
+    const details=await db.collection('admindata').findOne({mail:req.params.gmail,password:req.params.password});
+    res.json(details);
+})
+app.get('/admincheck/:gmail',async(req,res)=>
+{
+    const details=await db.collection('admindata').findOne({gmail:req.params.gmail});
+    res.json(details);
+})
+app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
+    const details=await db.collection('admindata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
+    res.json(details);
+})
 app.get('/check/:gmail',async(req,res)=>
 {
     const details=await db.collection('userdata').findOne({gmail:req.params.gmail});
