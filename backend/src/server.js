@@ -80,7 +80,18 @@ app.get('/coding',async(req,res)=>{
     const details=await db.collection('codingdata').find().toArray()
     res.json(details);
 })
-
+app.get('/current',async(req,res)=>{
+    const details=await db.collection('cafdata').find().toArray()
+    res.json(details);
+})
+app.get('/sports',async(req,res)=>{
+    const details=await db.collection('sportsdata').find().toArray()
+    res.json(details);
+})
+app.get('/entertine',async(req,res)=>{
+    const details=await db.collection('entrdata').find().toArray()
+    res.json(details);
+})
 //delete data//
 app.get('/delete',async(req,res)=>{
     const details=await db.collection('sportsdata').deleteMany()

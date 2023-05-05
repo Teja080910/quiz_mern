@@ -178,6 +178,11 @@
   height: 30vh;
   margin: 2% 0% 0% 40%;
 }
+button
+{
+  border: none;
+  border-radius: 20%;
+}
 
 
 

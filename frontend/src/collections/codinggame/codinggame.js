@@ -1,11 +1,10 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 const Coding=()=>
 {
     const [data,sdata]=useState([]);
-    const [err,serr]=useState([]);
+    const [crt,scrt]=useState([]);
     useEffect(()=>
 {
     axios.get("http://localhost:8000/coding")
@@ -26,10 +25,10 @@ const Coding=()=>
                return(
                 <>
                 <p><b>=> {teja.question}</b></p>
-                <p>A.{teja.answer1}</p>
-                <p>B.{teja.answer2}</p>
-                <p>C.{teja.answer3}</p>
-                <p>D.None</p>
+                A.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer1}</input><br/>
+                B.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer2}</input><br/>
+                C.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer3}</input><br/>
+                D.<button>None</button>
                 </>
                )
             })
