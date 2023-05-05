@@ -14,11 +14,14 @@ import Gameinput from '../adlog/gameinput';
 import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
+import A from '../welocme/welcome';
 function App() {
   return (
     <>
-    <div className='header'></div>
-    <BrowserRouter>
+    <div className='header'>
+    <A/>
+    </div>
+     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/> 
       <Route path='/adlog' element={<Adlog/>}/>
@@ -35,8 +38,10 @@ function App() {
       <Route path='/update' element={<Update/>}/>
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
-    </BrowserRouter>
-    <div className='footer'></div>
+    </BrowserRouter> 
+    <div className='footer'>
+  
+    </div>
     </>
   );
 }
