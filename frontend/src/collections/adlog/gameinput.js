@@ -8,24 +8,56 @@ const Gameinput=()=>{
     const [ans2,sans2]=useState('');
     const [ans3,sans3]=useState('');
     const coding=async()=>{
-        const responce=await axios.post("http://localhost:8000/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        if(result.data)
+        {
+            const responce=await axios.post("http://localhost:8000/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
+        }
+        else
+        {
+            alert("question already exist")
+        }
     }
     const sports=async()=>{
-        const responce=await axios.post("http://localhost:8000/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
+        const result=await axios.get("http://localhost:8000/sports/"+ques)
+        if(result.data)
+        {
+            const responce=await axios.post("http://localhost:8000/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
+        }
+        else
+        {
+            alert("question already exist")
+        }
     }
     const current=async()=>{
-        const responce=await axios.post("http://localhost:8000/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        if(result.data)
+        {
+            const responce=await axios.post("http://localhost:8000/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
+        }
+        else
+        {
+            alert("question already exist")
+        }
     }
     const entertine=async()=>{
-        const responce=await axios.post("http://localhost:8000/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
+        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        if(result.data)
+        {
+            const responce=await axios.post("http://localhost:8000/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
+        }
+        else
+        {
+            alert("question already exist")
+        }
     }
     return(
         <>

@@ -60,11 +60,26 @@ app.post('/entertine/:id/:answer1/:answer2/:answer3',async(req,res) => {
     res.json(details);
 })
 //find game data//
-app.get('/coding',async(req,res)=>{
+app.get('/coding/:question',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({question:req.params.question})
+    res.json(details);
+})
+app.get('/coding/:question',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({question:req.params.question})
+    res.json(details);
+})
+app.get('/sports/:question',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({question:req.params.question})
+    res.json(details);
+})
+app.get('/current/:question',async(req,res)=>{
+    const details=await db.collection('codingdata').findOne({question:req.params.question})
+    res.json(details);
+})
+app.get('/entertine',async(req,res)=>{
     const details=await db.collection('codingdata').find().toArray()
     res.json(details);
 })
-
 
 //delete data//
 app.get('/delete',async(req,res)=>{
