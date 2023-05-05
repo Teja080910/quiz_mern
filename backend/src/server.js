@@ -59,6 +59,13 @@ app.post('/entertine/:id/:answer',async(req,res) => {
     const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer:req.params.answer});
     res.json(details);
 })
+//find game data//
+app.get('/coding',async(req,res)=>{
+    const details=await db.collection('codingdata').find().toArray()
+    res.json(details);
+})
+
+
 //delete data//
 app.get('/delete',async(req,res)=>{
     const details=await db.collection('entrdata').deleteMany()
