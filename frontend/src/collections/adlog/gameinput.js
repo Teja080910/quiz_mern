@@ -37,26 +37,26 @@ const Gameinput=()=>{
         const result=await axios.get("http://localhost:8000/coding/"+ques)
         if(result.data)
         {
-            const responce=await axios.post("http://localhost:8000/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
-        console.log(responce.data);
-        alert("sucessfully insert")
+            alert("question already exist")
         }
         else
         {
-            alert("question already exist")
+        const responce=await axios.post("http://localhost:8000/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        console.log(responce.data);
+        alert("sucessfully insert")
         }
     }
     const entertine=async()=>{
         const result=await axios.get("http://localhost:8000/coding/"+ques)
         if(result.data)
         {
-            const responce=await axios.post("http://localhost:8000/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
-        console.log(responce.data);
-        alert("sucessfully insert")
+            alert("question already exist")
         }
         else
         {
-            alert("question already exist")
+         const responce=await axios.post("http://localhost:8000/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
+        console.log(responce.data);
+        alert("sucessfully insert")
         }
     }
     return(
