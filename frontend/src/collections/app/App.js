@@ -31,7 +31,7 @@ function App() {
       <Route path='/entertinegame' element={<Entertine/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
-      <Route path='/error' element={<Errorpage/>}/>
+      <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter>
     <div className='footer'></div>
