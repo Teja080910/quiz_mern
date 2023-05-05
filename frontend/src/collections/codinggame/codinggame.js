@@ -25,9 +25,11 @@ const Coding=()=>
             data.map((teja)=>{
                return(
                 <>
-                <p> 1) {teja.question}</p>
-                <p>{teja.answer}</p>
-                <p><b>Teja</b></p>
+                <p><b>=> {teja.question}</b></p>
+                <p>A.{teja.answer1}</p>
+                <p>B.{teja.answer2}</p>
+                <p>C.{teja.answer3}</p>
+                <p>D.None</p>
                 </>
                )
             })
