@@ -4,7 +4,20 @@ import axios from "axios";
 const Coding=()=>
 {
     const [data,sdata]=useState([]);
-    const [crt,scrt]=useState([]);
+    const [crt,scrt]=useState("");
+    const [c,sc]=useState(0);
+    const Marks=()=>
+    {
+        if(crt==="A folder of python modules")
+        {
+            sc(c+2);
+        }
+        else
+        {
+            sc(c-1)
+        }
+    }
+
     useEffect(()=>
 {
     axios.get("http://localhost:8000/coding")
@@ -25,10 +38,10 @@ const Coding=()=>
                return(
                 <>
                 <p><b>=> {teja.question}</b></p>
-                A.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer1}</input><br/>
-                B.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer2}</input><br/>
-                C.<input type="radio" value="A folder of python modules" onChange={(e)=>scrt(e.target.value)} >{teja.answer3}</input><br/>
-                D.<button>None</button>
+                A.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer1}</button><br/>
+                B.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer2}</button><br/>
+                C.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer3}</button><br/>
+                D.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>None</button>
                 </>
                )
             })
