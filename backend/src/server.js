@@ -43,20 +43,20 @@ app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
     res.json(details);
 })
 //game data//
-app.post('/coding/:question/:answer',async(req,res) => {
-    const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer});
+app.post('/coding/:question/:answer1/:answer2/:answer3',async(req,res) => {
+    const details = await db.collection('codingdata').insertOne({question:req.params.question,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
 })
-app.post('/sports/:id/:answer',async(req,res) => {
-    const details = await db.collection('sportsdata').insertOne({_id:req.params.id,answer:req.params.answer});
+app.post('/sports/:id/:answer1/:answer2/:answer3',async(req,res) => {
+    const details = await db.collection('sportsdata').insertOne({_id:req.params.id,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
 })
-app.post('/current/:question/:answer',async(req,res) => {
-    const details = await db.collection('cafdata').insertOne({question:req.params.question,answer:req.params.answer});
+app.post('/current/:question/:answer1/:answer2/:answer3',async(req,res) => {
+    const details = await db.collection('cafdata').insertOne({question:req.params.question,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
 })
-app.post('/entertine/:id/:answer',async(req,res) => {
-    const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer:req.params.answer});
+app.post('/entertine/:id/:answer1/:answer2/:answer3',async(req,res) => {
+    const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
 })
 //find game data//
@@ -68,7 +68,7 @@ app.get('/coding',async(req,res)=>{
 
 //delete data//
 app.get('/delete',async(req,res)=>{
-    const details=await db.collection('entrdata').deleteMany()
+    const details=await db.collection('sportsdata').deleteMany()
     .then((result)=>
     {
         console.log("sucesslly delete all data in userdata base");

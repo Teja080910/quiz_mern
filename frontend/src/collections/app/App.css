@@ -135,10 +135,12 @@
 .gamebord
 {
   width: 100vh;
-  height: 50vh;
-  background-color:whitesmoke;
+  height: 80vh;
+  background-color:rgb(212, 234, 212);
   margin: 22vh 10vh 25vh 15vh;
-  
+  overflow: scroll;
+  margin-top:2%;
+  border: solid 7px green;
 }
 .scorebord
 {
@@ -173,7 +175,7 @@
 .inputback
 {
   width: 80%;
-  height: 20vh;
+  height: 30vh;
   margin: 2% 0% 0% 40%;
 }
 

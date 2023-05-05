@@ -25,8 +25,9 @@ const Coding=()=>
             data.map((teja)=>{
                return(
                 <>
-                <p>{teja.question}</p>
+                <p> 1) {teja.question}</p>
                 <p>{teja.answer}</p>
+                <p><b>Teja</b></p>
                 </>
                )
             })
