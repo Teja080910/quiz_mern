@@ -145,7 +145,36 @@
   height: 35vh;
   background-color:rgb(52, 11, 11);
 }
-
+/* adlog page */
+.adbtn1
+{
+  width: 12%;
+  height: 10vh;
+  background-color:yellow;
+  font-size: x-large;
+  color:green;
+  border-radius: 50%;
+  margin: 45vh 45vh 45vh 20%;
+  position: absolute;
+}
+.adbtn2
+{
+  width: 12%;
+  height: 10vh;
+  background-color:yellow;
+  font-size: x-large;
+  color:blue;
+  border-radius: 50%;
+  margin: 45vh 45vh 45vh 67%;
+  position: absolute;
+}
+/* gameinput */
+.inputback
+{
+  width: 80%;
+  height: 20vh;
+  margin: 2% 0% 0% 40%;
+}
 
 
 

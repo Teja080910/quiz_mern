@@ -5,7 +5,7 @@ const Start=()=>
     const move=useNavigate();
     const ready=async()=>
     {
-        move("/login");
+        move("/adlog");
     }
     return(
         <>

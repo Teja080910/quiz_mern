@@ -31,12 +31,24 @@ app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
 //     });
 //     res.json(details);
 // })
-app.post('/sample/:id/:answer',async(req,res) => {
+app.post('/coding/:question/:answer',async(req,res) => {
+    const details = await db.collection('codingdata').insertOne({question:req.params.question,answer:req.params.answer});
+    res.json(details);
+})
+app.post('/sports/:id/:answer',async(req,res) => {
+    const details = await db.collection('sportsdata').insertOne({_id:req.params.id,answer:req.params.answer});
+    res.json(details);
+})
+app.post('/current/:question/:answer',async(req,res) => {
+    const details = await db.collection('cafdata').insertOne({question:req.params.question,answer:req.params.answer});
+    res.json(details);
+})
+app.post('/entertine/:id/:answer',async(req,res) => {
     const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer:req.params.answer});
     res.json(details);
 })
 app.get('/delete',async(req,res)=>{
-    const details=await db.collection('userdata').deleteMany()
+    const details=await db.collection('entrdata').deleteMany()
     .then((result)=>
     {
         console.log("sucesslly delete all data in userdata base");
