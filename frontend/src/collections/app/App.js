@@ -10,8 +10,10 @@ import Current from '../currentgame/currentgame';
 import Sports from '../sportsgame/sportsgame';
 import Entertine from '../entertinegame/entertinegame';
 import Adlog from '../adlog/adlog';
-import Adminlogin from '../adlog/adminlogin';
 import Gameinput from '../adlog/gameinput';
+import Adminlogin from '../adlog/adminlogin';
+import Errorpage from '../error/error';
+import Adminregister from '../register/adminregister';
 function App() {
   return (
     <>
@@ -21,6 +23,7 @@ function App() {
       <Route path='/' element={<Start/>}/> 
       <Route path='/adlog' element={<Adlog/>}/>
       <Route path='/adminlogin' element={<Adminlogin/>}/>
+      <Route path='/adminregister' element={<Adminregister/>}/>
       <Route path='/gameinput' element={<Gameinput/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/gamep' element={<Gamep/>}/>
@@ -30,6 +33,7 @@ function App() {
       <Route path='/entertinegame' element={<Entertine/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
+      <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter>
     <div className='footer'></div>

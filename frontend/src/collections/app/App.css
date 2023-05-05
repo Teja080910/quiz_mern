@@ -138,6 +138,7 @@
   height: 50vh;
   background-color:whitesmoke;
   margin: 22vh 10vh 25vh 15vh;
+  
 }
 .scorebord
 {
@@ -150,11 +151,11 @@
 {
   width: 12%;
   height: 10vh;
-  background-color:yellow;
+  background-color:greenyellow;
   font-size: x-large;
   color:green;
   border-radius: 50%;
-  margin: 45vh 45vh 45vh 20%;
+  margin: 44vh 45vh 45vh 20%;
   position: absolute;
 }
 .adbtn2
@@ -165,7 +166,7 @@
   font-size: x-large;
   color:blue;
   border-radius: 50%;
-  margin: 45vh 45vh 45vh 67%;
+  margin: 44vh 45vh 45vh 67%;
   position: absolute;
 }
 /* gameinput */

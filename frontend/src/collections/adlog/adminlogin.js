@@ -11,7 +11,7 @@ const Adminlogin=()=>{
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
+            const responce=await axios.get("http://localhost:8000/adminlogin/"+gmail+"/"+password);
             if(responce.data)
         {
             nav("/gameinput")
@@ -26,7 +26,7 @@ const Adminlogin=()=>{
         }
     }
     const Regi=async()=>{
-        nav("/register")
+        nav("/adminregister")
     }
     const Upadate=async()=>{
         nav("/update")

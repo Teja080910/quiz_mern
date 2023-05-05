@@ -4,11 +4,34 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Coding=()=>
 {
+    const [data,sdata]=useState([]);
+    const [err,serr]=useState([]);
+    useEffect(()=>
+{
+    axios.get("http://localhost:8000/coding")
+    .then((result)=>
+    {
+        console.log(result.data)
+        sdata(result.data)
+    })
+    .catch((err)=>console.log(err))
+},[])
     return(
         <>
         <div className="gameback">
         <div className="scorebord"></div>
-        <div className="gamebord"></div>
+        <div className="gamebord">
+        {
+            data.map((teja)=>{
+               return(
+                <>
+                <p>{teja.question}</p>
+                <p>{teja.answer}</p>
+                </>
+               )
+            })
+        }
+        </div>
         </div>
         </>
     )
