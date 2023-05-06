@@ -42,7 +42,7 @@ app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
     const details=await db.collection('admindata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
-//game data//
+//game input data//
 app.post('/coding/:question/:answer1/:answer2/:answer3',async(req,res) => {
     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
@@ -92,6 +92,29 @@ app.get('/entertine',async(req,res)=>{
     const details=await db.collection('entrdata').find().toArray()
     res.json(details);
 })
+//input answer//
+app.post('/codingans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/currentans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/sportsans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/entertineans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+//answer data//
+app.get('/codingansw/:answer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.answer});
+    res.json(details);
+})
+
 //delete data//
 app.get('/delete',async(req,res)=>{
     const details=await db.collection('sportsdata').deleteMany()

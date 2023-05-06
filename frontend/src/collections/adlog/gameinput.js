@@ -7,6 +7,27 @@ const Gameinput=()=>{
     const [ans1,sans1]=useState('');
     const [ans2,sans2]=useState('');
     const [ans3,sans3]=useState('');
+    const [ans4,sans4]=useState('');
+    const codingans=async()=>
+    {
+        await axios.post("http://localhost:8000/codingans/"+ans4);
+        alert("sucessfully insert")
+    }
+    const currentans=async()=>
+    {
+        await axios.post("http://localhost:8000/currentans/"+ans4);
+        alert("sucessfully insert")
+    }
+    const sportsans=async()=>
+    {
+        await axios.post("http://localhost:8000/sportsans/"+ans4);
+        alert("sucessfully insert")
+    }
+    const entertineans=async()=>
+    {
+        await axios.post("http://localhost:8000/entertineans/"+ans4);
+        alert("sucessfully insert")
+    }
     const coding=async()=>{
         const result=await axios.get("http://localhost:8000/coding/"+ques)
         if(result.data)
@@ -28,8 +49,7 @@ const Gameinput=()=>{
         }
         else
         {
-            const responce=await axios.post("http://localhost:8000/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
-        console.log(responce.data);
+        await axios.post("http://localhost:8000/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
         alert("sucessfully insert")
         }
     }
@@ -69,7 +89,9 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 1" onChange={(e)=>sans1(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
-        <button onClick={coding}>insert</button>
+        <button onClick={coding}>insert</button><br></br>
+        <input type="text" name="correc_answer" placeholder="Enter coorect answer" onChange={(e)=>sans4(e.target.value)}></input><br></br>
+        <button onClick={codingans}>insert</button>
         </div>
         <div className="inputback">
         <h2>Sports data</h2>
@@ -78,7 +100,9 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 1" onChange={(e)=>sans1(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
-        <button onClick={sports}>insert</button>
+        <button onClick={sports}>insert</button><br></br>
+        <input type="text" name="correc_answer" placeholder="Enter coorect answer" onChange={(e)=>sans4(e.target.value)}></input><br></br>
+        <button onClick={sportsans}>insert</button>
         </div>
         <div className="inputback">
         <h2>Current Affair data</h2>
@@ -87,7 +111,9 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 1" onChange={(e)=>sans1(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
-        <button onClick={current}>insert</button>
+        <button onClick={current}>insert</button><br></br>
+        <input type="text" name="correc_answer" placeholder="Enter coorect answer" onChange={(e)=>sans4(e.target.value)}></input><br></br>
+        <button onClick={currentans}>insert</button>
         </div> 
         <div className="inputback">
         <h2>Entertinment data</h2>
@@ -96,7 +122,9 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 1" onChange={(e)=>sans1(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
-        <button onClick={entertine}>insert</button>
+        <button onClick={entertine}>insert</button><br></br>
+        <input type="text" name="correc_answer" placeholder="Enter coorect answer" onChange={(e)=>sans4(e.target.value)}></input><br></br>
+        <button onClick={entertineans}>insert</button>
         </div>
         </div>
         </>
