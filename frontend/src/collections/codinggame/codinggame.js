@@ -3,63 +3,53 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 const Coding=()=>
 {
+    const j=1;
     const [dat,sdata]=useState([]);
-    const [crt,scrt]=useState("");
+    const [crt,scrt]=useState([]);
     const [c,sc]=useState(0);
-    const [err,serr]=useState("");
+    const [i,si]=useState(1);
     const Marks=async()=>
     {
-        const res=await axios.get("http://localhost:8000/codingansw/"+crt)
-        console.log(res)
-        if(res.data)
+       const res=await axios.get("http://localhost:8000/codingans/"+crt)
+        if(res.data && i===j)
         {
-            sc(c+1);
-        }
-        else
-        {
-            serr("Wrong answer")
+            sc(c+1)
+            si(i+1)
         }
     }
-
+    const score=()=>{
+        <h1>Your Score::{c}</h1>
+    }
     useEffect(()=>
 {
     axios.get("http://localhost:8000/coding")
     .then((result)=>
     {
         sdata(result.data)
-        // console.log(result.data[0].question)
     })
-    .catch((err)=>console.log(err))
 },[])
     return(
         <>
         <div className="gameback">
         <div className="scorebord"><h3>Your Score::{c}</h3></div>
         <div className="gamebord">
-        {/* {
-            dat.map((teja)=>{
-               return(
-                <>
-               <div>
-               <p><b>=> {teja.question}</b></p>
-                <input onChange={(e)=>scrt(teja.answer1)} >{teja.answer1}</input ><br/>
-                <input  onChange={(e)=>scrt(teja.answer2)}>{teja.answer2}</input ><br/>
-                <input  onChange={(e)=>scrt(teja.answer3)}>{teja.answer3}</input ><br/>
-                <input   onClick={Marks}>None</input>
-               </div>
-               
-                </>
-               )
-            })
-        } */}
          <div>
       {dat.map((teja, index) => (
         <div key={index}>
-          <label>{item.label}</label>
-          <input type="text" value={item.value} onChange={(event) => handleInputChange(event, index)} />
+            <p><b>{index+1}.{teja.question}</b></p>
+          <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} ></input>
+          <label>{teja.answer1}</label><br></br>
+          <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} ></input>
+          <label>{teja.answer2}</label><br></br>
+          <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} ></input>
+          <label>{teja.answer3}</label><br></br>
+          <input type="radio" id="none" name={teja._id}></input>
+          <label>None</label><br></br>
+          <button  type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
     </div>
+    <div><button onClick={score}>Score</button></div>
         </div>
         </div>
         </>

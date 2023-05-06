@@ -111,8 +111,20 @@ app.get('/entertine',async(req,res)=>{
 })
 
 //answer data//
-app.get('/codingansw/:answer',async(req,res) => {
-    const details = await db.collection('answersdata').findOne({correct_answer:req.params.answer});
+app.get('/codingans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
+    res.json(details);
+})
+app.get('/currentans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
+    res.json(details);
+})
+app.get('/sportsans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
+    res.json(details);
+})
+app.get('/entertineans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
 
