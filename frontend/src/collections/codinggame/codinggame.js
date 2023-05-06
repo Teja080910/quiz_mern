@@ -9,8 +9,8 @@ const Coding=()=>
     const [err,serr]=useState("");
     const Marks=async()=>
     {
-        const res=await axios.get("http://localhost:8000/coding/"+crt)
-        if(res.data)
+        const res=await axios.get("http://localhost:8000/codingansw/"+crt)
+        if(res.data===crt)
         {
             sc(c+1);
         }
@@ -25,7 +25,6 @@ const Coding=()=>
     axios.get("http://localhost:8000/coding")
     .then((result)=>
     {
-        console.log(result.data)
         sdata(result.data)
     })
     .catch((err)=>console.log(err))
@@ -33,17 +32,17 @@ const Coding=()=>
     return(
         <>
         <div className="gameback">
-        <div className="scorebord"><h1 style={{color:'red'}}>{crt}</h1></div>
+        <div className="scorebord"><h3>Your Score::{c}</h3></div>
         <div className="gamebord">
         {
             dat.map((teja)=>{
                return(
                 <>
                 <p><b>=> {teja.question}</b></p>
-                A.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer1}</button><br/>
-                B.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer2}</button><br/>
-                C.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>{teja.answer3}</button><br/>
-                D.<button onChange={(e)=>scrt(e.target.value)} onClick={Marks}>None</button>
+                A.<button onChange={(e)=>scrt(teja.answer1)} onClick={Marks}>{teja.answer1}</button><br/>
+                B.<button onChange={(e)=>scrt(teja.answer2)} onClick={Marks}>{teja.answer2}</button><br/>
+                C.<button onChange={(e)=>scrt(teja.answer3)} onClick={Marks}>{teja.answer3}</button><br/>
+                D.<button  onClick={Marks}>None</button>
                 </>
                )
             })

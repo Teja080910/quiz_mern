@@ -110,8 +110,8 @@ app.post('/entertineans/:canswer',async(req,res) => {
     res.json(details);
 })
 //answer data//
-app.get('/codingans/:correct_answer',async(req,res) => {
-    const details = await db.collection('codingdata').findOne({correct_answer:req.params.correct_answer});
+app.get('/codingansw/:answer',async(req,res) => {
+    const details = await db.collection('answersdata').findOne({correct_answer:req.params.answer});
     res.json(details);
 })
 
