@@ -59,6 +59,23 @@ app.post('/entertine/:id/:answer1/:answer2/:answer3',async(req,res) => {
     const details = await db.collection('entrdata').insertOne({_id:req.params.id,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});
     res.json(details);
 })
+//input answer//
+app.post('/codingans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/currentans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/sportsans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
+app.post('/entertineans/:canswer',async(req,res) => {
+    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
+    res.json(details);
+})
 //find game data//
 app.get('/coding/:question',async(req,res)=>{
     const details=await db.collection('codingdata').findOne({question:req.params.question})
@@ -92,23 +109,7 @@ app.get('/entertine',async(req,res)=>{
     const details=await db.collection('entrdata').find().toArray()
     res.json(details);
 })
-//input answer//
-app.post('/codingans/:canswer',async(req,res) => {
-    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
-    res.json(details);
-})
-app.post('/currentans/:canswer',async(req,res) => {
-    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
-    res.json(details);
-})
-app.post('/sportsans/:canswer',async(req,res) => {
-    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
-    res.json(details);
-})
-app.post('/entertineans/:canswer',async(req,res) => {
-    const details = await db.collection('answersdata').insertOne({correct_answer:req.params.canswer});
-    res.json(details);
-})
+
 //answer data//
 app.get('/codingansw/:answer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.answer});
