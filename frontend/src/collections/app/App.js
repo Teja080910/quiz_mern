@@ -15,11 +15,13 @@ import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
 import A from '../welocme/welcome';
+import B from '../welcome1/welcome1';
 function App() {
   return (
     <>
     <div className='header'>
     <A/>
+    <B/>
     </div>
      <BrowserRouter>
     <Routes>
@@ -36,7 +38,9 @@ function App() {
       <Route path='/entertinegame' element={<Entertine/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
+      
       <Route path='*' element={<Errorpage/>}/>
+
     </Routes>
     </BrowserRouter> 
     <div className='footer'>
