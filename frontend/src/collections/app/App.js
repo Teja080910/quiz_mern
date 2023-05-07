@@ -14,21 +14,21 @@ import Gameinput from '../adlog/gameinput';
 import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
+import Wel from '../welocme/weldarling';
+import Headbar from '../head/head';
 //  import A from '../welocme/welcome';
 //  import B from '../welcome1/welcome1';
 function App() {
   return (
     <>
-    <div className='header'>
-    {/* <A/>
-    <B/> */}
-    </div>
+    <Headbar/>
      <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/> 
       <Route path='/adlog' element={<Adlog/>}/>
       <Route path='/adminlogin' element={<Adminlogin/>}/>
       <Route path='/adminregister' element={<Adminregister/>}/>
+      <Route path='/welcome' element={<Wel/>}/>
       <Route path='/gameinput' element={<Gameinput/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/gamep' element={<Gamep/>}/>

@@ -11,13 +11,15 @@ const Coding=()=>
     const Marks=async()=>
     {
        const res=await axios.get("http://localhost:8000/codingans/"+crt)
-        if(res.data && i===j)
+       console.log(res.data.correct_answer)
+        if(res.data.correct_answer===crt && i===j)
         {
             sc(c+1)
             si(i+1)
         }
     }
     const score=()=>{
+        localStorage.name="";
         <h1>Your Score::{c}</h1>
     }
     useEffect(()=>
@@ -25,6 +27,7 @@ const Coding=()=>
     axios.get("http://localhost:8000/coding")
     .then((result)=>
     {
+        console.log(result.data[2].answer1)
         sdata(result.data)
     })
 },[])

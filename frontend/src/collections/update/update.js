@@ -17,7 +17,7 @@ const Update=()=>{
         if(responce1.data)
         {
             const responce=await axios.post("http://localhost:8000/update/"+name+"/"+gmail+"/"+password+"/"+cpassword)
-            console.log(responce)
+            console.log(responce.data.name)
             if(responce.data)
             {
                 nav('/login');

@@ -28,6 +28,12 @@ app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
     const details=await db.collection('userdata').updateOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
+//headbar//
+app.get('/headcheck/:name',async(req,res)=>
+{
+    const details=await db.collection('userdata').findOne({name:req.params.name});
+    res.json(details);
+})
 // Admin data server//
 app.get('/adminlogin/:mail/:password',async(req,res)=>{
     const details=await db.collection('admindata').findOne({mail:req.params.gmail,password:req.params.password});

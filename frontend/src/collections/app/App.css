@@ -2,10 +2,15 @@
 /* Header */
 .header {
   background-color: #e0c2c2;
-  color: #fff;
-  padding: 4vh;
+  color:blue;
+  height: 8vh;
 }
-
+.headn
+{
+  font-size:30px;
+  display: flex;
+  padding: 1% 0% 0% 3%;
+}
 /* Footer */
 .footer {
   background-color: #e0c2c2;
@@ -180,10 +185,20 @@
   height: 30vh;
   margin: 2% 0% 0% 40%;
 }
-button
+/* welcome darling */
+.weldar
 {
-  border: none;
-  border-radius: 20%;
+  width: 100%;
+  height: 88vh;
+  background-image: url(welcomebackground.jpg);
+  display:flex;
+}
+.welname
+{
+  color: rgb(246, 51, 116);
+  font-size: 120px;
+  font-family:kalam;
+  padding: 10% 10% 0% 18%;
 }
 
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -7,14 +7,20 @@ const Login=()=>{
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [error,serror]=useState("");
+    const [c,sc]=useState(1);
     const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // const res=await axios.get("http://localhost:8000/headchek")
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
             const responce=await axios.get("http://localhost:8000/login/"+gmail+"/"+password);
             if(responce.data)
         {
-            nav("/gamep")
+            localStorage.name=responce.data.name;
+            window.location.href(nav("/gamep"))
+            window.location.reload("/gamep")
+            // nav("/gamep")
         }
         else{
             serror("password or mail incorrect")

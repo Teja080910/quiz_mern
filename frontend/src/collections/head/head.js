@@ -1,0 +1,20 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+const Headbar=()=>
+{
+    const name=localStorage.name;
+    // const head1=()=>
+    // {
+    //     nav("/gamep")
+    // }
+    return(
+        <div className="header">
+            <div className="headn">
+            <div><b>welcome::{name}</b></div>
+            <button style={{marginLeft:'60%',backgroundColor:'blue',width:'80px'}}><b>Home</b></button>
+            <button style={{marginLeft:'10%',backgroundColor:'blue',width:'80px'}} ><b>About</b></button>
+            </div>
+        </div>
+    )
+}
+export default Headbar;

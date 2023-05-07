@@ -14,7 +14,7 @@ const Adminlogin=()=>{
             const responce=await axios.get("http://localhost:8000/adminlogin/"+gmail+"/"+password);
             if(responce.data)
         {
-            nav("/gameinput")
+            nav("/welcome")
         }
         else{
             serror("password or mail incorrect")
