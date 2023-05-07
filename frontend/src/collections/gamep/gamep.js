@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Gamep=()=>
 {
     const nav=useNavigate();
@@ -21,6 +22,7 @@ const Gamep=()=>
     }
     return(
         <>
+        <Headbar/>
        <div className="lbtn">
         <div className="btn1">
             <button className="gbtn" onClick={Coding}><b>Enter</b></button>

@@ -1,8 +1,9 @@
 import React from "react";
-
+import Headbar1 from "../head/head1";
 const B=()=>{
     return(
         <>
+        <Headbar1/>
         <center>
         
            <div className='image'>

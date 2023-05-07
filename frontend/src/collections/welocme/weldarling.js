@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Headbar1 from "../head/head1";
 const Wel=()=>{
     const nav=useNavigate();
    const insertion=()=>{
@@ -7,6 +8,7 @@ const Wel=()=>{
    }
     return(
         <>
+        <Headbar1/>
         <div className="weldar">
             <div className="welname">
             <b>Welcome Darling</b>

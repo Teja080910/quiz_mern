@@ -1,9 +1,10 @@
 import React from "react";
-
+import Headbar1 from "../head/head1";
 const About=()=>{
 
     return(
         <>
+        <Headbar1/>
         <div className="about">
         <h1>ABOUT</h1>
         <p>This is the Quiz app application , 

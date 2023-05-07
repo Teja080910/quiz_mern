@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Update=()=>{
     const nav=useNavigate();
     const [name,sname]=useState("");
@@ -39,6 +40,7 @@ const Update=()=>{
     }
     return(
         <>
+        <Headbar/>
         <div className="regi">
         <table className='tabledata'>
             <tr>

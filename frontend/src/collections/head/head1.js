@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const Headbar=()=>
+const Headbar1=()=>
 {
     const name=localStorage.name;
     return(
@@ -13,4 +13,4 @@ const Headbar=()=>
         </div>
     )
 }
-export default Headbar;
+export default Headbar1;

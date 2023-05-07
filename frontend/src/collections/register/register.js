@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Headbar1 from "../head/head1";
 const Register=()=>{
     const nav=useNavigate();
     const [name,sname]=useState("");
@@ -45,6 +46,7 @@ const Register=()=>{
     }
     return(
         <>
+        <Headbar1/>
         <div className="regi">
         <table className='tabledata'>
             <tr>

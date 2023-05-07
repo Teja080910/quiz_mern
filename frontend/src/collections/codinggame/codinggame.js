@@ -1,6 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import Headbar from "../head/head";
 const Coding=()=>
 {
     const j=1;
@@ -33,6 +34,7 @@ const Coding=()=>
 },[])
     return(
         <>
+        <Headbar/>
         <div className="gameback">
         <div className="scorebord"><h3>Your Score::{c}</h3></div>
         <div className="gamebord">

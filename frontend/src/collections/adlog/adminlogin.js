@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Headbar1 from "../head/head1";
 const Adminlogin=()=>{
     const nav=useNavigate();
     const [gmail,sgmail]=useState("");
@@ -33,6 +34,7 @@ const Adminlogin=()=>{
     }
     return(
         <>
+        <Headbar1/>
         <div className="regi">
         <table className='tabledata'>
             <tr>

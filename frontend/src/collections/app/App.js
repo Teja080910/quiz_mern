@@ -22,7 +22,6 @@ import About from '../about/about';
 function App() {
   return (
     <>
-    <Headbar/>
      <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/> 
