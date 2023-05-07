@@ -6,7 +6,7 @@ const Headbar=()=>
     return(
         <div className="header">
             <div className="headn">
-            <div><b>welcome::{name}</b></div>
+            <div><b>welcome::</b></div>
             <button style={{marginLeft:'60%',backgroundColor:'blue',width:'80px'}}><b>Home</b></button>
             <button style={{marginLeft:'10%',backgroundColor:'blue',width:'80px'}} ><b>About</b></button>
             </div>
