@@ -16,23 +16,13 @@ import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
 import Wel from '../welocme/weldarling';
 import Headbar from '../head/head';
-//  import A from '../welocme/welcome';
-//  import B from '../welcome1/welcome1';
-function App() {
-  return (
-    <>
-    <Headbar/>
 import A from '../welocme/welcome';
 import About from '../about/about';
  import B from '../welcome1/welcome1';
 function App() {
   return (
     <>
-    <div className='header'>
-    
-   
-    </div>
->>>>>>> c88e8df8c6c04a419d0e40fec2ddd43f86214bb2
+    <Headbar/>
      <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/> 
@@ -52,13 +42,10 @@ function App() {
       <Route path='/welcome' element={<A/>}/>
       <Route path='/welcome1' element={<B/>}/>
       <Route path='/about' element={<About/>}/>
-      
       <Route path='*' element={<Errorpage/>}/>
-
     </Routes>
     </BrowserRouter> 
     <div className='footer'>
-  
     </div>
     </>
   );
