@@ -1,9 +1,20 @@
 import React from "react";
+
 const B=()=>{
     return(
         <>
-        <h3><i>Sorry Darling.!</i></h3>
+        <center>
         
+           <div className='image'>
+            <div>Sorry Darling</div>
+            <div className='color'>
+           
+           This is only for Admins
+           </div>
+           </div>
+           
+        {/* <h1><i>Sorry Darling.!</i></h1> */}
+        </center>
         </>
     )
 };
