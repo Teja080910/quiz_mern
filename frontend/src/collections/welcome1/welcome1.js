@@ -6,14 +6,12 @@ const B=()=>{
         <center>
         
            <div className='image'>
-            <div>Sorry Darling</div>
-            <div className='color'>
-           
+            <div className="color">Sorry Darling</div>
+            <div style={{color:"rgb(113, 201, 228)"}}>
            This is only for Admins
            </div>
            </div>
            
-        {/* <h1><i>Sorry Darling.!</i></h1> */}
         </center>
         </>
     )
