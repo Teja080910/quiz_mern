@@ -22,6 +22,34 @@
   }
 }
 
+/* about */
+.about
+{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size:30px;
+}
+/* welocome1 */
+.image
+{
+  background-image: url(smile1.jpg);
+  height: 90vh;
+  width: 100%;
+  background-size: 100% 90vh; 
+  background-repeat: no-repeat;
+  color:blue;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 70px;
+   padding: 0% 0% 0% 0% 0%;
+   
+  /* welcome1 */
+}
+.color
+{
+  color:rgb(113, 201, 228);
+  font-size: 80px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding:20% 20% 20% 20%;
+}
 
 .startback
 {
