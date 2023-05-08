@@ -27,7 +27,7 @@ const Adminlogin=()=>{
         }
     }
     const Regi=async()=>{
-        nav("/adminregister")
+        nav("/welcome1")
     }
     const Upadate=async()=>{
         nav("/update")

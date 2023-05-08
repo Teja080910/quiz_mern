@@ -15,10 +15,11 @@ import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
 import Wel from '../welocme/weldarling';
-import Headbar from '../head/head';
 import A from '../welocme/welcome';
 import About from '../about/about';
  import B from '../welcome1/welcome1';
+ import Leader from '../scoreboard/leaderboard';
+ import Myscore from '../scoreboard/myscore';
 function App() {
   return (
     <>
@@ -41,6 +42,8 @@ function App() {
       <Route path='/welcome' element={<A/>}/>
       <Route path='/welcome1' element={<B/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/myscore' element={<Myscore/>}/>
+      <Route path='/leaderboard' element={<Leader/>}/>
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter> 

@@ -2,26 +2,29 @@ import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import Headbar from "../head/head";
+import { useNavigate } from "react-router-dom";
 const Coding=()=>
 {
-    const j=1;
+    const nav=useNavigate();
     const [dat,sdata]=useState([]);
     const [crt,scrt]=useState([]);
-    const [c,sc]=useState(0);
-    const [i,si]=useState(1);
+    const [c,sc]=useState(1);
+    const name1=localStorage.name;
     const Marks=async()=>
     {
        const res=await axios.get("http://localhost:8000/codingans/"+crt)
        console.log(res.data.correct_answer)
-        if(res.data.correct_answer===crt && i===j)
+        if(res.data.correct_answer===crt)
         {
             sc(c+1)
-            si(i+1)
+            scrt('');
+            localStorage.score=c;
         }
     }
-    const score=()=>{
-        localStorage.name="";
-        <h1>Your Score::{c}</h1>
+    const Score=async()=>{
+        const details=await axios.post("http://localhost:8000/leaderboard/"+name1+"/"+c)
+        console.log(details.data);
+       nav('/myscore')
     }
     useEffect(()=>
 {
@@ -36,7 +39,7 @@ const Coding=()=>
         <>
         <Headbar/>
         <div className="gameback">
-        <div className="scorebord"><h3>Your Score::{c}</h3></div>
+        <div className="scorebord"><h3>Your Score::{0}</h3></div>
         <div className="gamebord">
          <div>
       {dat.map((teja, index) => (
@@ -54,7 +57,7 @@ const Coding=()=>
         </div>
       ))}
     </div>
-    <div><button onClick={score}>Score</button></div>
+    <div><button onClick={Score}>Score</button></div>
         </div>
         </div>
         </>

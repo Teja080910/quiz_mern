@@ -133,9 +133,18 @@ app.get('/entertineans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
-
+//score data//
+app.post("/leaderboard/:name/:score",async(req,res)=>{
+    const details=await db.collection('scoredata').insertOne({name:req.params.name,score:req.params.score})
+    res.json(details);
+})
+app.get('/leaderboard',async(req,res)=>
+{
+    const details=await db.collection('scoredata').find().toArray();
+    res.json(details);
+})
 //delete data//
-app.get('/delete',async(req,res)=>{
+app.get('/delete1234',async(req,res)=>{
     const details=await db.collection('sportsdata').deleteMany()
     .then((result)=>
     {
