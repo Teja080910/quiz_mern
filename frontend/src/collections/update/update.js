@@ -17,16 +17,29 @@ const Update=()=>{
             const responce1=await axios.get("http://localhost:8000/check/"+gmail);
         if(responce1.data)
         {
-            const responce=await axios.post("http://localhost:8000/update/"+name+"/"+gmail+"/"+password+"/"+cpassword)
-            console.log(responce.data.name)
-            if(responce.data)
-            {
-                nav('/login');
-            }
-            else
-            {
-                serr("Again change")
-            }
+            if((password.length)>7)
+               {
+                if(password===cpassword)
+                {
+                    const responce=await axios.post("http://localhost:8000/update/"+gmail+"/"+password+"/"+cpassword)
+                    if(responce.data)
+                        {
+                             nav('/login');  
+                        }
+                    else
+                        {
+                            serr("Again change")
+                        }
+                }
+                else
+                {
+                    serr("passwords not match")
+                }
+               }
+               else
+               {
+                serr("Pasword length must be >=8")
+               }
         }
         else
         {

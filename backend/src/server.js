@@ -25,7 +25,7 @@ app.get('/login/:gmail/:password',async(req,res)=>{
 })
 app.post('/update/:gmail/:password/:cpassword',async(req,res)=>
 {
-    const details=await db.collection('userdata').updateOne({gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
+    const details=await db.collection('userdata').findOneAndUpdate({gmail:req.params.gmail},{$set:{password:req.params.password,cpassword:req.params.cpassword}})
     res.json(details);
 })
 //headbar//

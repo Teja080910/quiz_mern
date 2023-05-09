@@ -21,9 +21,11 @@ const Register=()=>{
             }
             else
             {
-                const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password+"/"+cpassword)
+               if(password.length>7)
+               {
                 if(password === cpassword)
                 {
+                    const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password+"/"+cpassword)
                     if(responce.data)   
                     {
                         nav("/login")
@@ -37,6 +39,11 @@ const Register=()=>{
                 {
                     serr("Passwords Not Match")
                 }
+               }
+               else
+               {
+                serr("password length must be >=8")
+               }
             }
         }
         else
