@@ -138,15 +138,15 @@ app.post("/codingboard/:gmail/:name/:score",async(req,res)=>{
     const details=await db.collection('codingscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
 })
-app.post("/currentboard/:gamil/:name/:score",async(req,res)=>{
+app.post("/currentboard/:gmail/:name/:score",async(req,res)=>{
     const details=await db.collection('currentscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
 })
-app.post("/sportsboard/:gamil/:name/:score",async(req,res)=>{
+app.post("/sportsboard/:gmail/:name/:score",async(req,res)=>{
     const details=await db.collection('sportsscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
 })
-app.post("/entertineboard/:gamil/:name/:score",async(req,res)=>{
+app.post("/entertineboard/:gmail/:name/:score",async(req,res)=>{
     const details=await db.collection('entertinescore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
 })
@@ -185,7 +185,7 @@ app.get('/entertineboard',async(req,res)=>{
 })
 //delete data//
 app.get('/delete1234',async(req,res)=>{
-    const details=await db.collection('codingscore').deleteMany()
+    const details=await db.collection('currentscore').deleteMany()
     .then((result)=>
     {
         console.log("sucesslly delete all data in userdata base");

@@ -9,6 +9,7 @@ const Gamep=()=>
     const nav=useNavigate();
     const Coding=async()=>
     {
+        localStorage.game="coding";
         const res=await axios.get("http://localhost:8000/codingboard/"+gmail)
         if(res.data)
         {
@@ -30,9 +31,11 @@ const Gamep=()=>
         {
             nav("/currentgame")
         }
+        localStorage.game="current";
     }
     const Sports=async()=>
     {
+        localStorage.game="sports";
         const res=await axios.get("http://localhost:8000/sportsboard/"+name)
         if(res.data)
         {
@@ -45,6 +48,7 @@ const Gamep=()=>
     }
     const Entertine=async()=>
     {
+        localStorage.game="entertine";
         const res=await axios.get("http://localhost:8000/entertineboard/"+name)
         if(res.data)
         {

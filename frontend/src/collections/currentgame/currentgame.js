@@ -2,30 +2,30 @@ import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import Headbar from "../head/head";
+import { useNavigate } from "react-router-dom";
 const Current=()=>
 {
-    const j=1;
+    const nav=useNavigate();
     const [dat,sdata]=useState([]);
     const [crt,scrt]=useState([]);
-    const [i,si]=useState(1);
     const [c,sc]=useState(0);
+    const gmail1=localStorage.gmail;
+    const name1=localStorage.name;
     const Marks=async()=>
     {
        const res=await axios.get("http://localhost:8000/currentans/"+crt)
-        console.log(crt)
-        if(res.data)
+       console.log(res.data.correct_answer)
+        if(res.data.correct_answer===crt)
         {
-            if(i===j)
-            {
-                sc(c+1)
-                si(i+1)
-            }
-        }
-        else{
-            // alert("Sorry No answer found")
+            sc(c+1)
+            scrt('');
         }
     }
-
+    const Score=async()=>{
+        const details=await axios.post("http://localhost:8000/currentboard/"+gmail1+"/"+name1+"/"+c)
+        console.log(details.data);
+       nav('/myscore')
+    }
     useEffect(()=>
 {
     axios.get("http://localhost:8000/current")
@@ -38,7 +38,7 @@ const Current=()=>
         <>
         <Headbar/>
         <div className="gameback">
-        <div className="scorebord"><h3>Your Score::{c}</h3></div>
+        <div className="scorebord"><h3>Your Score::{0}</h3></div>
         <div className="gamebord">
          <div>
       {dat.map((teja, index) => (
@@ -52,11 +52,11 @@ const Current=()=>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
-          <button  type="submit" onClick={Marks}>submit</button>
+          <button style={{backgroundColor:'green',marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
-       
     </div>
+    <div><button style={{backgroundColor:'orange',width:'15vh',height:'7vh',margin:"2% 0% 2% 36%"}} onClick={Score}>Score</button></div>
         </div>
         </div>
         </>

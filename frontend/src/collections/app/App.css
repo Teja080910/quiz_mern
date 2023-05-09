@@ -17,6 +17,7 @@
   color: #fff;
   padding: 2vh;
   margin-top: -0.5%;
+  display: flex;
 }
 
 /* Responsive styles */
@@ -150,6 +151,7 @@
   margin: 21vh 20% 21vh 20%;
   background-color:gold;
   opacity: 90%;
+  border:none;
 }
 /* game */
 .gameback

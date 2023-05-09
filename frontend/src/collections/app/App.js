@@ -20,6 +20,7 @@ import About from '../about/about';
  import B from '../welcome1/welcome1';
  import Leader from '../scoreboard/leaderboard';
  import Myscore from '../scoreboard/myscore';
+ import Footer from '../footer/footer';
 function App() {
   return (
     <>
@@ -47,8 +48,7 @@ function App() {
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter> 
-    <div className='footer'>
-    </div>
+    <Footer/>
     </>
   );
 }

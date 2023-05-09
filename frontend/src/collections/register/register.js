@@ -54,7 +54,7 @@ const Register=()=>{
                     <label for="name"><b>name:: </b></label>
                 </td>
                 <td className="input">
-                <input type='text' name='name' placeholder='Enter your full name' onChange={(e)=>sname(e.target.value)}></input>
+                <input type='text' name='name' placeholder='Enter your full name' onChange={(e)=>sname(e.target.value.charAt(0).toLocaleUpperCase()+e.target.value.slice(1))}></input>
                 </td>
             </tr>
             <tr>

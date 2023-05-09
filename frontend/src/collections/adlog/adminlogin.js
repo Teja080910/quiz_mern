@@ -56,19 +56,19 @@ const Adminlogin=()=>{
             <td style={{color:'orangered'}} colSpan={2} align="center"><b>{error}</b></td>
             <tr>
                 <td style={{paddingTop:"4vh",paddingBottom:'5vh',textAlign:"center"}} colSpan={2}>
-                <button style={{backgroundColor:"lightgreen", borderRadius:"20%"}} onClick={Show}><b>Login</b></button>
+                <button style={{background:"none",color:'ButtonHighlight', border:'none'}} onClick={Show}><b>Login</b></button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button  style={{backgroundColor:'yellow',borderColor:'ButtonShadow',marginBottom:'5vh'}} onClick={Regi}><b>New account</b></button>
+                    <button  style={{background:'none',border:'none',marginBottom:'5vh',color:'blue'}} onClick={Regi}><b>New account</b></button>
                 </td>
                 <td  align="right">
-                    <button style={{backgroundColor:'orange',borderColor:'ButtonHighlight',marginBottom:'5vh'}} onClick={Upadate}><b>Forgot password</b></button>
+                    <button style={{background:'none',border:'none',marginBottom:'5vh',color:"blueviolet"}} onClick={Upadate}><b>Forgot password</b></button>
                 </td>
             </tr>
         </table>        
-        </div>    
+        </div>        
         </>
     )
 }

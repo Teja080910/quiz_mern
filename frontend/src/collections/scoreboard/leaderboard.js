@@ -8,13 +8,47 @@ const Leader=()=>
     const[data,sdata]=useState([]);
     useEffect(()=>
     {
-        axios.get("http://localhost:8000/codingboard")
-        .then((res)=>
+        const game=localStorage.game;
+        if(game==="coding")
+        {
+            axios.get("http://localhost:8000/codingboard")
+            .then((res)=>
         {
             // console.log(res.data.sort().reverse())
-            sdata(res.data.sort().reverse())
+            sdata(res.data.sort())
         })
         .catch((err)=>console.log(err))
+        }
+        else if(game==="current")
+        {
+            axios.get("http://localhost:8000/currentboard")
+            .then((res)=>
+        {
+            // console.log(res.data.sort().reverse())
+            sdata(res.data.sort())
+        })
+        .catch((err)=>console.log(err))
+        }
+        else if(game==="sports")
+        {
+            axios.get("http://localhost:8000/sportsboard")
+            .then((res)=>
+        {
+            // console.log(res.data.sort().reverse())
+            sdata(res.data.sort())
+        })
+        .catch((err)=>console.log(err))
+        }
+        else
+        {
+            axios.get("http://localhost:8000/entertineboard")
+            .then((res)=>
+        {
+            // console.log(res.data.sort().reverse())
+            sdata(res.data.sort())
+        })
+        .catch((err)=>console.log(err))
+        }
     },[])
     return(
         <>
