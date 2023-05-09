@@ -8,7 +8,8 @@ const Coding=()=>
     const nav=useNavigate();
     const [dat,sdata]=useState([]);
     const [crt,scrt]=useState([]);
-    const [c,sc]=useState(1);
+    const [c,sc]=useState(0);
+    const gmail1=localStorage.gmail;
     const name1=localStorage.name;
     const Marks=async()=>
     {
@@ -18,11 +19,10 @@ const Coding=()=>
         {
             sc(c+1)
             scrt('');
-            localStorage.score=c;
         }
     }
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/leaderboard/"+name1+"/"+c)
+        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
         console.log(details.data);
        nav('/myscore')
     }
@@ -31,7 +31,6 @@ const Coding=()=>
     axios.get("http://localhost:8000/coding")
     .then((result)=>
     {
-        console.log(result.data[2].answer1)
         sdata(result.data)
     })
 },[])
@@ -53,11 +52,11 @@ const Coding=()=>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
-          <button  type="submit" onClick={Marks}>submit</button>
+          <button style={{backgroundColor:'green',marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
     </div>
-    <div><button onClick={Score}>Score</button></div>
+    <div><button style={{backgroundColor:'orange',width:'15vh',height:'7vh',margin:"2% 0% 2% 36%"}} onClick={Score}>Score</button></div>
         </div>
         </div>
         </>

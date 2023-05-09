@@ -8,7 +8,7 @@ const Leader=()=>
     const[data,sdata]=useState([]);
     useEffect(()=>
     {
-        axios.get("http://localhost:8000/entertine")
+        axios.get("http://localhost:8000/codingboard")
         .then((res)=>
         {
             // console.log(res.data.sort().reverse())
@@ -34,8 +34,8 @@ const Leader=()=>
             data.map((teja,index)=>(
                         <tr>
                             <td style={{backgroundColor:'rgb(255, 96, 48)'}}><b>{index+1}</b></td>
-                            <td style={{backgroundColor:'white'}}><b>{teja._id}</b></td>
-                            <td style={{backgroundColor:'green'}}><b>{teja.answer1}</b></td>
+                            <td style={{backgroundColor:'white'}}><b>{teja.score}</b></td>
+                            <td style={{backgroundColor:'green'}}><b>{teja.name}</b></td>
                         </tr>
             ))
         }

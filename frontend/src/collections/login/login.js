@@ -10,7 +10,6 @@ const Login=()=>{
     const [error,serror]=useState("");
     const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
-    // const res=await axios.get("http://localhost:8000/headchek")
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
@@ -18,10 +17,10 @@ const Login=()=>{
             if(responce.data)
         {
             localStorage.name=responce.data.name;
+            localStorage.gmail=responce.data.gmail;
             window.location.href(nav("/gamep"))
             window.location.reload("/gamep")
-            // nav("/gamep")
-            localStorage.gmail=gmail;
+            
         }
         else{
             serror("password or mail incorrect")

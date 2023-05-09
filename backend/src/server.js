@@ -19,13 +19,13 @@ app.get('/check/:gmail',async(req,res)=>
     const details=await db.collection('userdata').findOne({gmail:req.params.gmail});
     res.json(details);
 })
-app.get('/login/:mail/:password',async(req,res)=>{
-    const details=await db.collection('userdata').findOne({mail:req.params.gmail,password:req.params.password});
+app.get('/login/:gmail/:password',async(req,res)=>{
+    const details=await db.collection('userdata').findOne({gmail:req.params.gmail,password:req.params.password});
     res.json(details);
 })
-app.post('/update/:name/:gmail/:password/:cpassword',async(req,res)=>
+app.post('/update/:gmail/:password/:cpassword',async(req,res)=>
 {
-    const details=await db.collection('userdata').updateOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
+    const details=await db.collection('userdata').updateOne({gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
     res.json(details);
 })
 //headbar//
@@ -134,18 +134,58 @@ app.get('/entertineans/:canswer',async(req,res) => {
     res.json(details);
 })
 //score data//
-app.post("/leaderboard/:name/:score",async(req,res)=>{
-    const details=await db.collection('scoredata').insertOne({name:req.params.name,score:req.params.score})
+app.post("/codingboard/:gmail/:name/:score",async(req,res)=>{
+    const details=await db.collection('codingscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
 })
-app.get('/leaderboard',async(req,res)=>
-{
-    const details=await db.collection('scoredata').find().toArray();
+app.post("/currentboard/:gamil/:name/:score",async(req,res)=>{
+    const details=await db.collection('currentscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    res.json(details);
+})
+app.post("/sportsboard/:gamil/:name/:score",async(req,res)=>{
+    const details=await db.collection('sportsscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    res.json(details);
+})
+app.post("/entertineboard/:gamil/:name/:score",async(req,res)=>{
+    const details=await db.collection('entertinescore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    res.json(details);
+})
+app.get("/codingboard/:name",async(req,res)=>{
+    const details=await db.collection('codingscore').findOne({gmail:req.params.name})
+    res.json(details);
+})
+app.get("/currentboard/:name",async(req,res)=>{
+    const details=await db.collection('currentscore').findOne({gmail:req.params.name})
+    res.json(details);
+})
+app.get("/sportsboard/:name",async(req,res)=>{
+    const details=await db.collection('sportsscore').findOne({gmail:req.params.name})
+    res.json(details);
+})
+app.get("/entertineboard/:name",async(req,res)=>{
+    const details=await db.collection('entertinescore').findOne({gmail:req.params.name})
+    res.json(details);
+})
+// leader bord//
+app.get('/codingboard',async(req,res)=>{
+    const details=await db.collection('codingscore').find().toArray()
+    res.json(details);
+})
+app.get('/currentboard',async(req,res)=>{
+    const details=await db.collection('currentscore').find().toArray()
+    res.json(details);
+})
+app.get('/sportsboard',async(req,res)=>{
+    const details=await db.collection('sportsscore').find().toArray()
+    res.json(details);
+})
+app.get('/entertineboard',async(req,res)=>{
+    const details=await db.collection('entertinescore').find().toArray()
     res.json(details);
 })
 //delete data//
 app.get('/delete1234',async(req,res)=>{
-    const details=await db.collection('sportsdata').deleteMany()
+    const details=await db.collection('codingscore').deleteMany()
     .then((result)=>
     {
         console.log("sucesslly delete all data in userdata base");

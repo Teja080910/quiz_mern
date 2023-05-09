@@ -22,7 +22,7 @@ const Myscore=()=>
             <h3>SUCCESSFULLY</h3>
             <h4>COMPLETED</h4>
             <button style={{border:'none',backgroundColor:'wheat',height:'40px'}} onClick={Gpage}><b>Games Page</b></button>
-            <button style={{marginLeft:'50%',border:'none',backgroundColor:'wheat',height:'40px'}} onClick={Lbord}><b>Leaderboard</b></button>
+            <button style={{marginLeft:'30%',border:'none',backgroundColor:'wheat',height:'40px'}} onClick={Lbord}><b>Leaderboard</b></button>
         </div>
         </div>
         </>

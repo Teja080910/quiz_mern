@@ -237,8 +237,8 @@
 /* myscore */
 .myscore
 {
-  width: 30%;
-  height: 25vh;
+  width: 25%;
+  height: 30vh;
   color:green;
   background-color: rgb(209, 229, 246);
   text-align: center;
@@ -246,6 +246,7 @@
   font-family: Pacifico;
   border: 5px inset gold;
   margin: 15% 10% 10% 15%;
+  border-radius: 100%;
 }
 .about
 {

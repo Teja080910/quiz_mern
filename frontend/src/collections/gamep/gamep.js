@@ -1,24 +1,59 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
+import axios from "axios";
 const Gamep=()=>
 {
+    const gmail=localStorage.gmail;
+    const name=1;
     const nav=useNavigate();
-    const Coding=()=>
+    const Coding=async()=>
     {
-        nav("/codinggame")
+        const res=await axios.get("http://localhost:8000/codingboard/"+gmail)
+        if(res.data)
+        {
+            nav('/myscore')
+        }
+        else
+        {
+            nav('/codinggame')
+        }
     }
-    const Current=()=>
+    const Current=async()=>
     {
-        nav("/currentgame")
+        const res=await axios.get("http://localhost:8000/currentboard/"+name)
+        if(res.data)
+        {
+            nav('/myscore')
+        }
+        else
+        {
+            nav("/currentgame")
+        }
     }
-    const Sports=()=>
+    const Sports=async()=>
     {
-        nav("/sportsgame")
+        const res=await axios.get("http://localhost:8000/sportsboard/"+name)
+        if(res.data)
+        {
+            nav('/myscore')
+        }
+        else
+        {
+            nav("/sportsgame")
+        }
     }
-    const Entertine=()=>
+    const Entertine=async()=>
     {
-        nav("/entertinegame")
+        const res=await axios.get("http://localhost:8000/entertineboard/"+name)
+        if(res.data)
+        {
+            nav('/myscore')
+        }
+        else
+        {
+            nav("/entertinegame")
+        }
     }
     return(
         <>
