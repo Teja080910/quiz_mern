@@ -15,31 +15,13 @@ const Coding=()=>
     const name1=localStorage.name;
     const Marks=async()=>
     {
-        const res1=await axios.get("http://localhost:8000/coding")      
-        const size=res1.data.length 
-        console.log(crt);
-        const res2=await axios.get("http://localhost:8000/coding/"+crt)
-        console.log(res2.data)                                                
-        console.log(size)
-        var i;
-        while(i<size)
-        {
-            const res2=await axios.get("http://localhost:8000/coding/"+crt)
-            console.log(res2.data)
-            if(res2.data)
-            {
-                document.getElementById(i).style.backgroundColor="red";
-                i=i+1;
-            }
-            // document.getElementById(i).style.backgroundColor="green";
-        }
+        document.getElementById(dat1).style.backgroundColor="red";
        const res=await axios.get("http://localhost:8000/codingans/"+crt)       
        console.log(res.data.correct_answer)
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
             scrt('');
-            sdat("ok")
         }
     }
     const Score=async()=>{
@@ -74,7 +56,7 @@ const Coding=()=>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
-          <button id={index} onChange={(e)=>scrt(teja.question)} style={{backgroundColor:bg,marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit{dat1}</button>
+          <button   style={{backgroundColor:bg,marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
     </div>
