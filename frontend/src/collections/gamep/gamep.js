@@ -5,7 +5,6 @@ import axios from "axios";
 const Gamep=()=>
 {
     const gmail=localStorage.gmail;
-    const name=1;
     const nav=useNavigate();
     const Coding=async()=>
     {
@@ -22,7 +21,8 @@ const Gamep=()=>
     }
     const Current=async()=>
     {
-        const res=await axios.get("http://localhost:8000/currentboard/"+name)
+        localStorage.game="current";
+        const res=await axios.get("http://localhost:8000/currentboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')
@@ -31,12 +31,11 @@ const Gamep=()=>
         {
             nav("/currentgame")
         }
-        localStorage.game="current";
     }
     const Sports=async()=>
     {
         localStorage.game="sports";
-        const res=await axios.get("http://localhost:8000/sportsboard/"+name)
+        const res=await axios.get("http://localhost:8000/sportsboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')
@@ -49,7 +48,7 @@ const Gamep=()=>
     const Entertine=async()=>
     {
         localStorage.game="entertine";
-        const res=await axios.get("http://localhost:8000/entertineboard/"+name)
+        const res=await axios.get("http://localhost:8000/entertineboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')

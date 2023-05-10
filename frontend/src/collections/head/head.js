@@ -19,10 +19,10 @@ const Headbar=()=>
     return(
         <div className="header">
             <div className="headn">
-            <div><b>welcome::{name}</b></div>
+            <div style={{fontFamily:'Satisfy',color:'green'}}><b>welcome:{name}</b></div>
             <button style={{marginLeft:'60%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={Home}><b>Home</b></button>
             <button style={{marginLeft:'5%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={About}><b>About</b></button>
-            <button style={{marginLeft:'5%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={Myapps}><b>My Games</b></button>
+            <button style={{marginLeft:'3%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={Myapps}><b>My Games</b></button>
             </div>
         </div>
     )

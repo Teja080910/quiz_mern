@@ -12,8 +12,7 @@ const About=()=>{
             You can also login by clicking forgot password   </p><br></br>
             Once the login is completed you will be the page with four categories namely CODING SPORTS CURRENT AFFAIRS ENTERTAINMENT
             When you click enter the quiz will starts <br></br>
-            
-            </div>
+        </div>
         </>
         
     )
