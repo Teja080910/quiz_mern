@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTelegram,faWhatsapp,faFacebook,faInstagram, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faTelegram,faWhatsapp,faFacebook,faInstagram} from "@fortawesome/free-brands-svg-icons";
 const Footer=()=>
 {
     const Click1=()=>

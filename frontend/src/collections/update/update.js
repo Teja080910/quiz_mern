@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
 const Update=()=>{
     const nav=useNavigate();
-    const [name,sname]=useState("");
     const [gmail,sgmail]=useState("");
     const [password,spassword]=useState("");
     const [cpassword,scpassword]=useState("");
@@ -85,7 +84,7 @@ const Update=()=>{
             </tr>
             <tr>
                 <td className="input" style={{paddingBottom:'5vh'}} colSpan={2}>
-                <button style={{backgroundColor:'greenyellow'}} onClick={Updtshow}><b>Submit</b></button>
+                <button style={{backgroundColor:'greenyellow'}} onClick={Updtshow}><b>Up</b></button>
                 </td>
             </tr>
         </table>

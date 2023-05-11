@@ -29,6 +29,11 @@ const Gameinput=()=>{
         alert("sucessfully insert")
     }
     const coding=async()=>{
+        axios.get("http://localhost:8000/delcoding")
+        .then((res)=>
+        {
+            console.log("delete coding score")
+        })
         const result=await axios.get("http://localhost:8000/coding/"+ques)
         if(result.data)
         {
@@ -36,12 +41,17 @@ const Gameinput=()=>{
         }
         else
         {
-            const responce=await axios.post("http://localhost:8000/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        const responce=await axios.post("http://localhost:8000/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
         }
     }
     const sports=async()=>{
+        axios.get("http://localhost:8000/delsports")
+        .then((res)=>
+        {
+            console.log("delete sports score")
+        })
         const result=await axios.get("http://localhost:8000/sports/"+id)
         if(result.data)
         {
@@ -54,6 +64,11 @@ const Gameinput=()=>{
         }
     }
     const current=async()=>{
+        axios.get("http://localhost:8000/delcurrent")
+        .then((res)=>
+        {
+            console.log("delete current score")
+        })
         const result=await axios.get("http://localhost:8000/current/"+ques)
         if(result.data)
         {
@@ -67,6 +82,11 @@ const Gameinput=()=>{
         }
     }
     const entertine=async()=>{
+        axios.get("http://localhost:8000/delentertine")
+        .then((res)=>
+        {
+            console.log("delete entertine score")
+        })
         const result=await axios.get("http://localhost:8000/entertine/"+id)
         if(result.data)
         {

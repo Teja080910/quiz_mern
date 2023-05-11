@@ -15,7 +15,6 @@ import Adminlogin from '../adlog/adminlogin';
 import Errorpage from '../error/error';
 import Adminregister from '../register/adminregister';
 import Wel from '../welocme/weldarling';
-import A from '../welocme/welcome';
 import About from '../about/about';
  import B from '../welcome1/welcome1';
  import Leader from '../scoreboard/leaderboard';
@@ -40,7 +39,6 @@ function App() {
       <Route path='/entertinegame' element={<Entertine/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
-      <Route path='/welcome' element={<A/>}/>
       <Route path='/welcome1' element={<B/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/myscore' element={<Myscore/>}/>

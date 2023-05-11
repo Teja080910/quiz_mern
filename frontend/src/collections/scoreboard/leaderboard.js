@@ -14,17 +14,14 @@ const Leader=()=>
             axios.get("http://localhost:8000/codingboard")
             .then((res)=>
         {
-            // console.log(res.data.sort().reverse())
             sdata(res.data.sort().reverse())
         })
-        .catch((err)=>console.log(err))
         }
         else if(game==="current")
         {
             axios.get("http://localhost:8000/currentboard")
             .then((res)=>
         {
-            // console.log(res.data.sort().reverse())
             sdata(res.data.sort().reverse())
         })
         .catch((err)=>console.log(err))
@@ -34,7 +31,6 @@ const Leader=()=>
             axios.get("http://localhost:8000/sportsboard")
             .then((res)=>
         {
-            // console.log(res.data.sort().reverse())
             sdata(res.data.sort())
         })
         .catch((err)=>console.log(err))
@@ -44,7 +40,6 @@ const Leader=()=>
             axios.get("http://localhost:8000/entertineboard")
             .then((res)=>
         {
-            // console.log(res.data.sort().reverse())
             sdata(res.data.sort())
         })
         .catch((err)=>console.log(err))

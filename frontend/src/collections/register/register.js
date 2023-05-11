@@ -51,6 +51,10 @@ const Register=()=>{
             serr("Mail must be Email format")
         }
     }
+    const sign=()=>
+    {
+        nav("/login")
+    }
     return(
         <>
         <Headbar1/>
@@ -92,8 +96,16 @@ const Register=()=>{
                 <td colSpan={2} style={{color:"red",paddingTop:'2vh'}} align="center"><b>{err}</b></td>
             </tr>
             <tr>
-                <td className="input" style={{paddingBottom:'5vh'}} colSpan={2}>
+                <td className="input"  colSpan={2}>
                 <button style={{backgroundColor:'greenyellow'}} onClick={Show}><b>Submit</b></button>
+                </td>
+            </tr>
+            <tr>
+                <td className="input" style={{paddingBottom:'3vh'}}>
+                    Already have account..?
+                </td>
+                <td>
+                    <button align="center" style={{border:'none',background:'none',color:'whitesmoke',paddingTop:'2.5vh'}} onClick={sign}><h3>Sign in</h3></button>
                 </td>
             </tr>
         </table>

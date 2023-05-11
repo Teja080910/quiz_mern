@@ -8,7 +8,7 @@ const Sbord=()=>
     const game=localStorage.game;
     if(game==="coding")
     {
-        axios.get("http://localhost:8000/codingboard/"+name)
+    axios.get("http://localhost:8000/codingboard/"+name)
     .then((res1)=>
     {
        sc(res1.data.score)
@@ -42,7 +42,6 @@ const Sbord=()=>
     })
     .catch((err)=>console.log(err))
    }
-    // const sc=localStorage.score;
     return(
         <table className="scorebord">
             <tr>

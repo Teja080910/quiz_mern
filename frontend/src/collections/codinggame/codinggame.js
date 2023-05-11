@@ -10,32 +10,39 @@ const Coding=()=>
     const [scr,sscr]=useState(0);
     const [crt,scrt]=useState([]);
     const [c,sc]=useState(0);
-    const[bg,sbg]=useState('green')
+    const[bg,sbg]=useState(-1)
     const gmail1=localStorage.gmail;
     const name1=localStorage.name;
+    const Submit=async()=>
+    {
+        sbg(bg+1)
+    }
     const Marks=async()=>
     {
-        // document.getElementById(scr).style.backgroundColor="red";
+       if(bg===scr)
+       {
         document.getElementById(scr).innerHTML = "Submited";
-        document.getElementById(scr).style.backgroundColor="grey";
-
+        document.getElementById(scr).style.backgroundColor="white";
         document.getElementById(scr).disabled = true;
-
-
         sscr(scr+1)
+       }
        const res=await axios.get("http://localhost:8000/codingans/"+crt)       
-       console.log(res.data.correct_answer)
         if(res.data.correct_answer===crt)
         {
-            sc(c+1)
+            sc(c+2)
             scrt('');
         }
-        console.log(res.data.length)
+        else
+        {
+            sc(c-1)
+        }
     }
     const Score=async()=>{
         const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
-        console.log(details.data);
-       nav('/myscore')
+       if(details.data)
+       {
+        nav('/myscore')
+       }
     }
     useEffect(()=>
 {
@@ -56,15 +63,15 @@ const Coding=()=>
         <div key={index}>
             <p><b>{index+1}.{teja.question}</b></p>
             
-          <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} ></input>
+          <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} onClick={Submit}></input>
           <label>{teja.answer1}</label><br></br>
-          <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} ></input>
+          <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} onClick={Submit}></input>
           <label>{teja.answer2}</label><br></br>
-          <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} ></input>
+          <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} onClick={Submit}></input>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
-          <button key={index} id={index} style={{backgroundColor:bg,marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
+          <button id={index} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
     </div>

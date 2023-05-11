@@ -6,9 +6,7 @@ const Start=()=>
     const move=useNavigate();
     const ready=async()=>
     {
-        localStorage.name='';
-        window.location.href(move("/adlog"));
-        window.location.reload("/adlog");
+        move("/adlog")
     }
     return(
         <>
