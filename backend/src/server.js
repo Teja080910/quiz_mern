@@ -168,7 +168,7 @@ app.get("/entertineboard/:name",async(req,res)=>{
 })
 // leader bord//
 app.get('/codingboard',async(req,res)=>{
-    const details=await db.collection('codingscore').find().toArray()
+    const details=await db.collection('codingscore').find().sort({score:1}).toArray()
     res.json(details);
 })
 app.get('/currentboard',async(req,res)=>{

@@ -15,7 +15,7 @@ const Leader=()=>
             .then((res)=>
         {
             // console.log(res.data.sort().reverse())
-            sdata(res.data.sort())
+            sdata(res.data.sort().reverse())
         })
         .catch((err)=>console.log(err))
         }

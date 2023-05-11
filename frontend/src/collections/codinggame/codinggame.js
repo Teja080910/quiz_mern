@@ -7,7 +7,7 @@ const Coding=()=>
 {
     const nav=useNavigate();
     const [dat,sdata]=useState([]);
-    const [dat1,sdat]=useState([]);
+    const [scr,sscr]=useState(0);
     const [crt,scrt]=useState([]);
     const [c,sc]=useState(0);
     const[bg,sbg]=useState('green')
@@ -15,7 +15,14 @@ const Coding=()=>
     const name1=localStorage.name;
     const Marks=async()=>
     {
-        document.getElementById(dat1).style.backgroundColor="red";
+        // document.getElementById(scr).style.backgroundColor="red";
+        document.getElementById(scr).innerHTML = "Submited";
+        document.getElementById(scr).style.backgroundColor="grey";
+
+        document.getElementById(scr).disabled = true;
+
+
+        sscr(scr+1)
        const res=await axios.get("http://localhost:8000/codingans/"+crt)       
        console.log(res.data.correct_answer)
         if(res.data.correct_answer===crt)
@@ -23,6 +30,7 @@ const Coding=()=>
             sc(c+1)
             scrt('');
         }
+        console.log(res.data.length)
     }
     const Score=async()=>{
         const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
@@ -41,7 +49,7 @@ const Coding=()=>
         <>
         <Headbar/>
         <div className="gameback">
-        <div className="scorebord"><h3>Your Score::{0}</h3></div>
+        <div className="scorebord"><h3>Your Score::{}</h3></div>
         <div className="gamebord">
          <div>
       {dat.map((teja, index) => (
@@ -56,7 +64,7 @@ const Coding=()=>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
-          <button   style={{backgroundColor:bg,marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
+          <button key={index} id={index} style={{backgroundColor:bg,marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
     </div>
