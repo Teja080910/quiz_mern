@@ -20,6 +20,7 @@ import About from '../about/about';
  import Leader from '../scoreboard/leaderboard';
  import Myscore from '../scoreboard/myscore';
  import Footer from '../footer/footer';
+ import Photo from '../photo';
 function App() {
   return (
     <>
@@ -43,6 +44,7 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/myscore' element={<Myscore/>}/>
       <Route path='/leaderboard' element={<Leader/>}/>
+      <Route path='/photo' element={<Photo/>}/>
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter> 

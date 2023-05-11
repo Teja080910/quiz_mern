@@ -141,6 +141,10 @@ app.get('/currentans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
+// app.get('/currentans',async(req,res)=>{
+//     const details=await db.collection('answersdata').find().toArray()
+//     res.json(details);
+// })
 app.post("/currentboard/:gmail/:name/:score",async(req,res)=>{
     const details=await db.collection('currentscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
     res.json(details);
