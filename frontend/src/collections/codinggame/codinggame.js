@@ -35,16 +35,13 @@ const Coding=()=>
        const res=await axios.get("http://localhost:8000/codingans/"+crt)       
         if(res.data.correct_answer===crt)
         {
-            sc(c+2)
+            sc(c+1)
             scrt('');
         }
-        else
-        {
-            sc(c-1)
-        }
     }
+   const d=parseInt(c)
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
+        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+d)
        if(details.data)
        {
         nav('/myscore')

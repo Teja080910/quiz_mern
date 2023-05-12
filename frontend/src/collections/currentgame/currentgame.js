@@ -29,12 +29,8 @@ const Current=()=>
        const res=await axios.get("http://localhost:8000/currentans/"+crt)
         if(res.data.correct_answer===crt)
         {
-            sc(c+2)
+            sc(c+1)
             scrt('');
-        }
-        else
-        {
-            sc(c-1)
         }
     }
     const Score=async()=>{

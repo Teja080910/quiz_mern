@@ -61,9 +61,10 @@ const Leader=()=>
             </tr>
         {
             data.map((teja,index)=>(
+                
                         <tr>
                             <td style={{backgroundColor:'rgb(255, 96, 48)'}}><b>{index+1}</b></td>
-                            <td style={{backgroundColor:'white'}}><b>{teja.score}</b></td>
+                            <td style={{backgroundColor:'white'}}><b>{parseInt(teja.score)}</b></td>
                             <td style={{backgroundColor:'green'}}><b>{teja.name}</b></td>
                         </tr>
             ))

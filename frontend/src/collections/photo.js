@@ -1,35 +1,159 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios';
-const Photo=()=>
+import React from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
+import Headbar from "./head/head";
+import { useNavigate } from "react-router-dom";
+const Coding=()=>
 {
-    // const [images, simages] = useState([]);
-    const[data,sdata]=useState([]);
-    // const Upload=async()=>
+    const nav=useNavigate();
+    const [dat,sdata]=useState([]);
+    const [scr,sscr]=useState([]);
+    const [crt,scrt]=useState([]);
+    // const[i,si]=useState((0));
+    const [c,sc]=useState(0);
+    const[bg,sbg]=useState(-1)
+    const gmail1=localStorage.gmail;
+    const name1=localStorage.name;
+    // const Submit=async()=>
     // {
-    //     const res=await axios.post("http://localhost:8000/currentans/"+images)
-    //     if(res.data)
+    //     if(i===1)
     //     {
-    //         alert("insert")
+    //         sbg(bg+1)
+    //         si(i+1)
     //     }
     // }
-    useEffect(()=>
+    var i=0;
+    const Marks=async()=>
     {
-        axios.get("http://localhost:8000/currentans")
-        .then((result)=>
         {
-            console.log(result.data)
-            sdata(result.data)
-        })
-    },[])
+            dat.map((teja1)=>(
+                <div>
+                    .then(({teja1._id}===1))
+                    {
+                        document.getElementById(teja1._id).style.backgroundColor="white "
+                    }
+                </div>
+            ))
+          }
+        // while(i<bg)
+        // {
+        //     sscr(i)
+        //     document.getElementById(7).style.backgroundColor="white";
+        //     i++;
+        //     sscr(i)
+        // }
+    //    if(bg===scr)
+    //    {
+    //     document.getElementById(scr).innerHTML = "Submited";
+    //     document.getElementById(scr).style.backgroundColor="white";
+    //     document.getElementById(scr).disabled = true;
+    //     sscr(scr+1)
+    //     si(1)
+    //    }
+       const res=await axios.get("http://localhost:8000/codingans/"+crt)       
+        if(res.data.correct_answer===crt)
+        {
+            sc(c+2)
+            scrt('');
+        }
+        else
+        {
+            sc(c-1)
+        }
+    }
+    const Score=async()=>{
+        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
+       if(details.data)
+       {
+        nav('/myscore')
+       }
+    }
+    useEffect(()=>
+{
+    axios.get("http://localhost:8000/coding")
+    .then((result)=>
+    {
+        sdata(result.data)
+        sbg(result.data.length)
+        console.log(result.data.length)
+       
+    })
+},[])
     return(
         <>
-        <div className='post'>
-        {
-            data.map((teja)=>(
-                <p>{teja.correct_answer}</p>
-            ))}
+        <Headbar/>
+        <div className="gameback">
+        <div className="scorebord"><h3>Your Score::{}</h3></div>
+        <div className="gamebord">
+         <div>
+      {dat.map((teja, index) => (
+        <div key={index}>
+            <p><b>{index+1}.{teja.question}</b></p>
+            
+          <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} ></input>
+          <label>{teja.answer1}</label><br></br>
+          <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} ></input>
+          <label>{teja.answer2}</label><br></br>
+          <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} ></input>
+          <label>{teja.answer3}</label><br></br>
+          <input type="radio" id="none" name={teja._id} ></input>
+          <label>None</label><br></br>
+          <button id={teja._id} name={teja._id} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
+        </div>
+      ))}
+      
+    </div>
+    <div><button style={{backgroundColor:'yellow',width:'15vh',height:'7vh',margin:"2% 0% 2% 36%"}} onClick={Score}>Score</button></div>
+        </div>
         </div>
         </>
     )
 }
-export default Photo;
+export default Coding;
+
+
+
+
+
+
+
+
+
+
+
+
+// import React,{useState,useEffect} from 'react';
+// import axios from 'axios';
+// const Photo=()=>
+// {
+//     // const [images, simages] = useState([]);
+//     const[data,sdata]=useState([]);
+//     // const Upload=async()=>
+//     // {
+//     //     const res=await axios.post("http://localhost:8000/currentans/"+images)
+//     //     if(res.data)
+//     //     {
+//     //         alert("insert")
+//     //     }
+//     // }
+//     useEffect(()=>
+//     {
+//         axios.get("http://localhost:8000/currentans")
+//         .then((result)=>
+//         {
+//             console.log(result.data)
+//             sdata(result.data)
+//         })
+//     },[])
+//     return(
+//         <>
+//         <div className='post'>
+//         {
+//             data.map((teja)=>(
+//                 <p>{teja.correct_answer}</p>
+//             ))}
+//         </div>
+//         </>
+//     )
+// }
+// export default Photo;
