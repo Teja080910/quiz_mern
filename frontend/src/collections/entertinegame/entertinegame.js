@@ -62,13 +62,23 @@ const Entertine=()=>
       {dat.map((teja, index) => (
         <div key={index}>
             <p><b>{index+1}.{teja.question}</b></p>
-            
+     <div style={{ margin: '100px' }}> 
+      <img src='bear.jpg' alt=" " style={{ width: '400px', }}/>
+     </div>
           <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} onClick={Submit}></input>
           <label>{teja.answer1}</label><br></br>
+
+         
+          <div style={{ margin: '100px' }}> 
+      <img src='tiger.jpg' alt=" " style={{ width: '400px', }}/>
+     </div>
+  
           <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} onClick={Submit}></input>
           <label>{teja.answer2}</label><br></br>
+   
           <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} onClick={Submit}></input>
           <label>{teja.answer3}</label><br></br>
+          
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
           <button id={index} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
