@@ -7,7 +7,7 @@ const Coding=()=>
 {
     const nav=useNavigate();
     const [dat,sdata]=useState([]);
-    const [scr,sscr]=useState(0);
+    const [scr,sscr]=useState([]);
     const [crt,scrt]=useState([]);
     const[i,si]=useState((1));
     const [c,sc]=useState(0);
@@ -56,6 +56,7 @@ const Coding=()=>
     .then((result)=>
     {
         sdata(result.data)
+        console.log(result.data.length)
     })
 },[])
     return(
