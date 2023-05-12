@@ -25,6 +25,16 @@ const Coding=()=>
     var i=0;
     const Marks=async()=>
     {
+        {
+            dat.map((teja1)=>(
+                <div>
+                    .then(({teja1._id}===1))
+                    {
+                        document.getElementById(teja1._id).style.backgroundColor="white "
+                    }
+                </div>
+            ))
+          }
         // while(i<bg)
         // {
         //     sscr(i)
@@ -66,13 +76,7 @@ const Coding=()=>
         sdata(result.data)
         sbg(result.data.length)
         console.log(result.data.length)
-        {
-            dat.map((teja1)=>(
-                <div>
-                   { document.getElementById(teja1._id).style.backgroundColor="white"}
-                </div>
-            ))
-          }
+       
     })
 },[])
     return(
@@ -94,7 +98,7 @@ const Coding=()=>
           <label>{teja.answer3}</label><br></br>
           <input type="radio" id="none" name={teja._id} ></input>
           <label>None</label><br></br>
-          <button id={teja._id} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
+          <button id={teja._id} name={teja._id} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
       ))}
       
