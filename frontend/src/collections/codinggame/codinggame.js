@@ -9,13 +9,18 @@ const Coding=()=>
     const [dat,sdata]=useState([]);
     const [scr,sscr]=useState(0);
     const [crt,scrt]=useState([]);
+    const[i,si]=useState((1));
     const [c,sc]=useState(0);
     const[bg,sbg]=useState(-1)
     const gmail1=localStorage.gmail;
     const name1=localStorage.name;
     const Submit=async()=>
     {
-        sbg(bg+1)
+        if(i===1)
+        {
+            sbg(bg+1)
+            si(i+1)
+        }
     }
     const Marks=async()=>
     {
@@ -25,6 +30,7 @@ const Coding=()=>
         document.getElementById(scr).style.backgroundColor="white";
         document.getElementById(scr).disabled = true;
         sscr(scr+1)
+        si(1)
        }
        const res=await axios.get("http://localhost:8000/codingans/"+crt)       
         if(res.data.correct_answer===crt)
@@ -69,7 +75,7 @@ const Coding=()=>
           <label>{teja.answer2}</label><br></br>
           <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} onClick={Submit}></input>
           <label>{teja.answer3}</label><br></br>
-          <input type="radio" id="none" name={teja._id}></input>
+          <input type="radio" id="none" name={teja._id} onClick={Submit}></input>
           <label>None</label><br></br>
           <button id={index} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
         </div>
