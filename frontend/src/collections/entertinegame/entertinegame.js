@@ -68,9 +68,12 @@ const Entertine=()=>
       <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} onClick={Submit}></input>
           <label>{teja.answer2}</label><br></br>
      </div>
+          <input type="radio" id="answer1" name={teja._id} onChange={(e) =>scrt(teja.answer1)} onClick={Submit}></input>
+          <label>{teja.answer1}</label><br></br>
+          <input type="radio" id="answer2" name={teja._id} onChange={(e) =>scrt(teja.answer2)} onClick={Submit}></input>
+          <label>{teja.answer2}</label><br></br>
           <input type="radio" id="answer3" name={teja._id} onChange={(e) =>scrt(teja.answer3)} onClick={Submit}></input>
           <label>{teja.answer3}</label><br></br>
-          
           <input type="radio" id="none" name={teja._id}></input>
           <label>None</label><br></br>
           <button id={index} style={{backgroundColor:"green",marginLeft:"40%",cursor:'pointer'}} type="submit" onClick={Marks}>submit</button>
