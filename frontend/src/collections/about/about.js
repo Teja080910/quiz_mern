@@ -18,8 +18,7 @@ const About=()=>{
              <li>ENTERTAINMENT</li>
              </ul>
             When you click enter the quiz will starts,<br></br>
-            For each correct attempt your marks will be increased by two.<br></br>
-            And for wrong attempt there is negative marking i.e your score will decreased by one.<br></br>
+            For each correct attempt your marks will be increased by one.<br></br>
             After completing the quiz , You can check your score in the leaderboard.
         </div>
         </>
