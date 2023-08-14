@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/quiz_mern/static/css/main.e2c96065.css",
+    "main.js": "/quiz_mern/static/js/main.95d6a099.js",
+    "static/js/787.cda612ba.chunk.js": "/quiz_mern/static/js/787.cda612ba.chunk.js",
+    "static/media/welcomebackground.jpg": "/quiz_mern/static/media/welcomebackground.ef4e164b6af4a3eb54fc.jpg",
+    "static/media/coding.jpg": "/quiz_mern/static/media/coding.8dd8ad0ffefcaeb8d4ca.jpg",
+    "static/media/register.jpeg": "/quiz_mern/static/media/register.bf9730218eae6b4ce924.jpeg",
+    "static/media/smile1.jpg": "/quiz_mern/static/media/smile1.6e21874cecfc78a853f9.jpg",
+    "static/media/sp.jpg": "/quiz_mern/static/media/sp.260393d6ed2526528c65.jpg",
+    "static/media/entertainment.jpg": "/quiz_mern/static/media/entertainment.bb36e28c0d7d7234f35a.jpg",
+    "static/media/startdis.jpg": "/quiz_mern/static/media/startdis.3daaf53653dd49a50435.jpg",
+    "static/media/CA.jpg": "/quiz_mern/static/media/CA.19ddf737b6fa7163786f.jpg",
+    "static/media/quiz.jpg": "/quiz_mern/static/media/quiz.2071a97b98acfed11fab.jpg",
+    "index.html": "/quiz_mern/index.html",
+    "main.e2c96065.css.map": "/quiz_mern/static/css/main.e2c96065.css.map",
+    "main.95d6a099.js.map": "/quiz_mern/static/js/main.95d6a099.js.map",
+    "787.cda612ba.chunk.js.map": "/quiz_mern/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2c96065.css",
+    "static/js/main.95d6a099.js"
+  ]
+}
