@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Adminregister=()=>{
     const nav=useNavigate();
@@ -13,7 +12,7 @@ const Adminregister=()=>{
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce1=await axios.get("http://localhost:8000/admincheck/"+gmail)
+            const responce1=await axios.post("http://localhost:8000/admincheck/"+gmail)
             if(responce1.data)
             {
                 serr("Mail already Exist")

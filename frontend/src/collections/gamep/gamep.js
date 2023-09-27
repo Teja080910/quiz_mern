@@ -1,7 +1,7 @@
+import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
-import axios from "axios";
 const Gamep=()=>
 {
     const gmail=localStorage.gmail;
@@ -9,7 +9,7 @@ const Gamep=()=>
     const Coding=async()=>
     {
         localStorage.game="coding";
-        const res=await axios.get("http://localhost:8000/codingboard/"+gmail)
+        const res=await axios.post("http://localhost:8000/codingboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')
@@ -22,7 +22,7 @@ const Gamep=()=>
     const Current=async()=>
     {
         localStorage.game="current";
-        const res=await axios.get("http://localhost:8000/currentboard/"+gmail)
+        const res=await axios.post("http://localhost:8000/currentboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')
@@ -35,7 +35,7 @@ const Gamep=()=>
     const Sports=async()=>
     {
         localStorage.game="sports";
-        const res=await axios.get("http://localhost:8000/sportsboard/"+gmail)
+        const res=await axios.post("http://localhost:8000/sportsboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')
@@ -48,7 +48,7 @@ const Gamep=()=>
     const Entertine=async()=>
     {
         localStorage.game="entertine";
-        const res=await axios.get("http://localhost:8000/entertineboard/"+gmail)
+        const res=await axios.post("http://localhost:8000/entertineboard/"+gmail)
         if(res.data)
         {
             nav('/myscore')

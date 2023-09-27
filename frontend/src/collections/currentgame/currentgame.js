@@ -1,8 +1,7 @@
-import React from "react";
-import { useState,useEffect } from "react";
 import axios from "axios";
-import Headbar from "../head/head";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Current=()=>
 {
     const nav=useNavigate();
@@ -26,7 +25,7 @@ const Current=()=>
             document.getElementById(scr).disabled = true;
             sscr(scr+1)
         }
-       const res=await axios.get("http://localhost:8000/currentans/"+crt)
+       const res=await axios.post("http://localhost:8000/currentans/"+crt)
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
@@ -42,7 +41,7 @@ const Current=()=>
     }
     useEffect(()=>
 {
-    axios.get("http://localhost:8000/current")
+    axios.post("http://localhost:8000/current")
     .then((result)=>
     {
         sdata(result.data)

@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Headbar1 from "../head/head1";
 const Adminlogin=()=>{
@@ -12,7 +11,7 @@ const Adminlogin=()=>{
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce=await axios.get("http://localhost:8000/adminlogin/"+gmail+"/"+password);
+            const responce=await axios.post("http://localhost:8000/adminlogin/"+gmail+"/"+password);
             if(responce.data)
         {
             nav("/welcome")

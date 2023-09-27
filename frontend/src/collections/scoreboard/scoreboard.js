@@ -1,6 +1,5 @@
-import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 const Sbord=()=>
 {
     const[c,sc]=useState('');
@@ -8,7 +7,7 @@ const Sbord=()=>
     const game=localStorage.game;
     if(game==="coding")
     {
-    axios.get("http://localhost:8000/codingboard/"+name)
+    axios.post("http://localhost:8000/codingboard/"+name)
     .then((res1)=>
     {
        sc(res1.data.score)
@@ -17,7 +16,7 @@ const Sbord=()=>
     }
     else if(game==="current")
    {
-    axios.get("http://localhost:8000/currentboard/"+name)
+    axios.post("http://localhost:8000/currentboard/"+name)
     .then((res2)=>
     {
        sc(res2.data.score)
@@ -26,7 +25,7 @@ const Sbord=()=>
    }
    else if(game==="sports")
    {
-    axios.get("http://localhost:8000/sportsboard/"+name)
+    axios.post("http://localhost:8000/sportsboard/"+name)
     .then((res3)=>
     {
        sc(res3.data.score)
@@ -35,7 +34,7 @@ const Sbord=()=>
    }
    else
    {
-    axios.get("http://localhost:8000/entertineboard/"+name)
+    axios.post("http://localhost:8000/entertineboard/"+name)
     .then((res4)=>
     {
        sc(res4.data.score)

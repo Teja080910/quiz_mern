@@ -1,8 +1,7 @@
-import React from "react";
-import { useState,useEffect } from "react";
 import axios from "axios";
-import Headbar from "../head/head";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Entertine=()=>
 {
     const nav=useNavigate();
@@ -26,7 +25,7 @@ const Entertine=()=>
         document.getElementById(scr).disabled = true;
         sscr(scr+1)
        }
-       const res=await axios.get("http://localhost:8000/entertineans/"+crt)       
+       const res=await axios.post("http://localhost:8000/entertineans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
@@ -42,7 +41,7 @@ const Entertine=()=>
     }
     useEffect(()=>
 {
-    axios.get("http://localhost:8000/entertine")
+    axios.post("http://localhost:8000/entertine")
     .then((result)=>
     {
         sdata(result.data)

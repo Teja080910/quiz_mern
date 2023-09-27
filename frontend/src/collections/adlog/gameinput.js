@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 const Gameinput=()=>{
     const [id,sid]=useState("");
     const [ques,sques]=useState("");
@@ -29,14 +28,14 @@ const Gameinput=()=>{
         alert("sucessfully insert")
     }
     const coding=async()=>{
-        const result=await axios.get("http://localhost:8000/coding/"+ques)
+        const result=await axios.post("http://localhost:8000/coding/"+ques)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.get("http://localhost:8000/delcoding")
+            axios.post("http://localhost:8000/delcoding")
             .then((res)=>
             {
                 console.log("delete coding score")
@@ -46,14 +45,14 @@ const Gameinput=()=>{
         }
     }
     const sports=async()=>{
-        const result=await axios.get("http://localhost:8000/sports/"+id)
+        const result=await axios.post("http://localhost:8000/sports/"+id)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.get("http://localhost:8000/delsports")
+            axios.post("http://localhost:8000/delsports")
             .then((res)=>
             {
                 console.log("delete sports score")
@@ -63,14 +62,14 @@ const Gameinput=()=>{
         }
     }
     const current=async()=>{
-        const result=await axios.get("http://localhost:8000/current/"+ques)
+        const result=await axios.post("http://localhost:8000/current/"+ques)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-        axios.get("http://localhost:8000/delcurrent")
+        axios.post("http://localhost:8000/delcurrent")
         .then((res)=>
         {
             console.log("delete current score")
@@ -80,14 +79,14 @@ const Gameinput=()=>{
         }
     }
     const entertine=async()=>{
-        const result=await axios.get("http://localhost:8000/entertine/"+id)
+        const result=await axios.post("http://localhost:8000/entertine/"+id)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.get("http://localhost:8000/delentertine")
+            axios.post("http://localhost:8000/delentertine")
         .then((res)=>
         {
             console.log("delete entertine score")

@@ -1,8 +1,7 @@
-import React from "react";
-import { useState,useEffect } from "react";
 import axios from "axios";
-import Headbar from "../head/head";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Sports=()=>
 {
     const nav=useNavigate();
@@ -26,7 +25,7 @@ const Sports=()=>
         document.getElementById(scr).disabled = true;
         sscr(scr+1)
        }
-       const res=await axios.get("http://localhost:8000/sportsans/"+crt)       
+       const res=await axios.post("http://localhost:8000/sportsans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+2)
@@ -46,7 +45,7 @@ const Sports=()=>
     }
     useEffect(()=>
 {
-    axios.get("http://localhost:8000/sports")
+    axios.post("http://localhost:8000/sports")
     .then((result)=>
     {
         sdata(result.data)

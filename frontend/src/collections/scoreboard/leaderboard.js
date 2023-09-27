@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React from 'react';
-import { useState,useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Headbar from '../head/head';
 import Sbord from './scoreboard';
 const Leader=()=>
@@ -11,7 +10,7 @@ const Leader=()=>
         const game=localStorage.game;
         if(game==="coding")
         {
-            axios.get("http://localhost:8000/codingboard")
+            axios.post("http://localhost:8000/codingboard")
             .then((res)=>
         {
             sdata(res.data.sort().reverse())
@@ -19,7 +18,7 @@ const Leader=()=>
         }
         else if(game==="current")
         {
-            axios.get("http://localhost:8000/currentboard")
+            axios.post("http://localhost:8000/currentboard")
             .then((res)=>
         {
             sdata(res.data.sort().reverse())
@@ -28,7 +27,7 @@ const Leader=()=>
         }
         else if(game==="sports")
         {
-            axios.get("http://localhost:8000/sportsboard")
+            axios.post("http://localhost:8000/sportsboard")
             .then((res)=>
         {
             sdata(res.data.sort())
@@ -37,7 +36,7 @@ const Leader=()=>
         }
         else
         {
-            axios.get("http://localhost:8000/entertineboard")
+            axios.post("http://localhost:8000/entertineboard")
             .then((res)=>
         {
             sdata(res.data.sort())

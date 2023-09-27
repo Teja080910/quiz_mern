@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
 const Update=()=>{
@@ -13,7 +12,7 @@ const Update=()=>{
     const Updtshow=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce1=await axios.get("http://localhost:8000/check/"+gmail);
+            const responce1=await axios.post("http://localhost:8000/check/"+gmail);
         if(responce1.data)
         {
             if((password.length)>7)
