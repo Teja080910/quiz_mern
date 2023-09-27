@@ -27,7 +27,7 @@ function App() {
      <BrowserRouter>
     <Routes>
       <Route path='/' element={<Start/>}/> 
-      <Route path='/adlog' element={<Adlog/>}/>
+      <Route path='/192.0809.00' element={<Adlog/>}/>
       <Route path='/adminlogin' element={<Adminlogin/>}/>
       <Route path='/adminregister' element={<Adminregister/>}/>
       <Route path='/welcome' element={<Wel/>}/>
@@ -41,7 +41,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/update' element={<Update/>}/>
       <Route path='/welcome1' element={<B/>}/>
-      <Route path='/about' element={<About/>}/>
+      <Route path='/192.0809.08' element={<About/>}/>
       <Route path='/myscore' element={<Myscore/>}/>
       <Route path='/leaderboard' element={<Leader/>}/>
       <Route path='/photo' element={<Photo/>}/>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
-import Headbar1 from '../head/head1';
+import { useNavigate } from 'react-router-dom';
+import Headbar from '../head/head';
 const Start=()=>
 {
     const move=useNavigate();
@@ -10,7 +10,7 @@ const Start=()=>
     }
     return(
         <>
-        <Headbar1/>
+        <Headbar/>
         <div className='startback'>
             <div><button className='stbtn' onClick={ready}><b>START</b></button></div>
         </div>
