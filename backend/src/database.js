@@ -1,11 +1,14 @@
-import {MongoClient} from "mongodb";
+import dev from 'dotenv';
+import { MongoClient } from "mongodb";
+dev.config();
 let db; 
 async function connectToDB(cb){
-    const url = "mongodb+srv://tejasimma033:Teja2002@cluster0.74jcr0b.mongodb.net/?retryWrites=true&w=majority";
+    const url =`${process.env.database}`;
     const client = new MongoClient(url);
     await client.connect();
-    db = client.db("quizapp");
+    db = client.db("Project_saver");
     cb();
 }
 
-export {db,connectToDB};
+export { connectToDB, db };
+
