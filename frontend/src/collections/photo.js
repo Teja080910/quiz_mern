@@ -11,8 +11,8 @@ const Coding=()=>
     // const[i,si]=useState((0));
     const [c,sc]=useState(0);
     const[bg,sbg]=useState(-1)
-    const gmail1=localStorage.gmail;
-    const name1=localStorage.name;
+    const gmail1=sessionStorage.gmail;
+    const name1=sessionStorage.name;
     // const Submit=async()=>
     // {
     //     if(i===1)

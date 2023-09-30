@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Sbord=()=>
 {
     const[c,sc]=useState('');
-    const name=localStorage.gmail;
+    const name=sessionStorage.gmail;
     const game=sessionStorage.game;
     if(game==="coding")
     {
