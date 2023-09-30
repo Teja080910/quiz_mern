@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Headbar1 from "../head/head1";
+import Headbar from "../head/head";
 const Wel=()=>{
     const nav=useNavigate();
    const insertion=()=>{
-    nav('/gameinput')
+    nav('/192.0809.04')
    }
     return(
         <>
-        <Headbar1/>
+        <Headbar/>
         <div className="weldar">
             <div className="welname">
             <b>Welcome Darling</b>

@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Headbar1 from "../head/head1";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Headbar from "../head/head";
 const Register=()=>{
     const nav=useNavigate();
     const [name,sname]=useState("");
@@ -10,7 +12,7 @@ const Register=()=>{
     const [cpassword,scpassword]=useState("");
     const [err,serr]=useState("");
     const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const Show=async()=>{
+    const Register=async()=>{
         if(emailtest.test(gmail))
         {
             const responce1=await axios.post("http://localhost:8000/check/"+gmail)
@@ -24,10 +26,10 @@ const Register=()=>{
                {
                 if(password === cpassword)
                 {
-                    const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password+"/"+cpassword)
+                    const responce=await axios.post("http://localhost:8000/register/"+name+"/"+gmail+"/"+password)
                     if(responce.data)   
                     {
-                        nav("/login")
+                        nav("/192.0809.05")
                     }
                     else
                     {
@@ -50,64 +52,45 @@ const Register=()=>{
             serr("Mail must be Email format")
         }
     }
-    const sign=()=>
-    {
-        nav("/login")
-    }
     return(
         <>
-        <Headbar1/>
+        <Headbar/>
         <div className="regi">
-        <table className='tabledata'>
-            <tr>
-                <td className="input">
-                    <label for="name"><b>name:: </b></label>
-                </td>
-                <td className="input">
-                <input type='text' name='name' placeholder='Enter your full name' onChange={(e)=>sname(e.target.value.charAt(0).toLocaleUpperCase()+e.target.value.slice(1))}></input>
-                </td>
-            </tr>
-            <tr>
-                <td className="input">
-                <label for="name"><b>Gmail:: </b></label>
-                </td>
-                <td className="input">
-                <input type='mail' name='gmail' placeholder='Enter your mail' onChange={(e)=>sgmail(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td className="input">
-                <label for="name"><b>Password::</b></label>
-                </td>
-                <td className="input">
-                <input type='password' name='password' placeholder='Enter your password' onChange={(e)=>spassword(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td className="input">
-                <label for="name"><b>confirm password::</b></label>
-                </td>
-                <td className="input">
-                <input type='password' name='cpassword' placeholder='Enter your confirm password' onChange={(e)=>scpassword(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td colSpan={2} style={{color:"red",paddingTop:'2vh'}} align="center"><b>{err}</b></td>
-            </tr>
-            <tr>
-                <td className="input"  colSpan={2}>
-                <button style={{backgroundColor:'greenyellow'}} onClick={Show}><b>Submit</b></button>
-                </td>
-            </tr>
-            <tr>
-                <td className="input" style={{paddingBottom:'3vh'}}>
-                    Already have account..?
-                </td>
-                <td>
-                    <button align="center" style={{border:'none',background:'none',color:'whitesmoke',paddingTop:'2.5vh'}} onClick={sign}><h3>Sign in</h3></button>
-                </td>
-            </tr>
-        </table>
+                <div className="register">
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formBasicName">
+                            <Form.Label for='name'>Name</Form.Label>
+                            <Form.Control type="text" id="name" placeholder="Enter Full Name" onChange={(e)=>sname(e.target.value.charAt(0).toLocaleUpperCase()+e.target.value.slice(1))} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label for="gmail">Email </Form.Label>
+                            <Form.Control type="email" id="gmail" placeholder="Enter email" onChange={(e)=>sgmail(e.target.value)} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label for='password'>Password</Form.Label>
+                            <Form.Control type="password" id="password" placeholder="Enter Password" onChange={(e)=>spassword(e.target.value)}/>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label for='cpassword'>Confirm Password</Form.Label>
+                            <Form.Control type="password" id="cpassword" placeholder="Enter Confirm Password" onChange={(e)=>scpassword(e.target.value)}/>
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.Text style={{color:"red"}}>{err}</Form.Text>
+                        </Form.Group>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Button variant="primary" onClick={Register}>Sumbit</Button>
+                        </div>
+                        <br/>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <Form.Text>Already have an account</Form.Text>
+                        <Button href="/192.0809.05" style={{marginLeft:'5%'}} variant="primary" type="submit">Login</Button>
+                    </div>
+                    </Form>
+                </div>
         </div>    
         </>
     )

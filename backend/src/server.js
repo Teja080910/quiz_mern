@@ -9,8 +9,8 @@ app.post('/',(req,res)=>{
     res.send("server running")
 })
 //user data server//
-app.post('/register/:name/:gmail/:password/:cpassword',async(req,res)=>{
-    const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password,cpassword:req.params.cpassword})
+app.post('/register/:name/:gmail/:password',async(req,res)=>{
+    const details=await db.collection('userdata').insertOne({name:req.params.name,gmail:req.params.gmail,password:req.params.password})
     res.json(details);
 })
 app.post('/check/:gmail',async(req,res)=>
@@ -190,7 +190,7 @@ app.post("/entertineboard/:name",async(req,res)=>{
     res.json(details);
 })
 app.post('/entertineboard',async(req,res)=>{
-    const details=await db.collection('entertinescore').find().sort({score:-1}).toArray()
+    const details=await db.collection('entertinescore').find().toArray()
     res.json(details);
 })
 //delete data//

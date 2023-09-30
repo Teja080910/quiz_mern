@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 const Update=()=>{
     const nav=useNavigate();
     const [gmail,sgmail]=useState("");
@@ -22,7 +24,7 @@ const Update=()=>{
                     const responce=await axios.post("http://localhost:8000/update/"+gmail+"/"+password+"/"+cpassword)
                     if(responce.data)
                         {
-                             nav('/login');  
+                             nav('/192.0809.05');  
                         }
                     else
                         {
@@ -53,40 +55,35 @@ const Update=()=>{
         <>
         <Headbar/>
         <div className="regi">
-        <table className='tabledata'>
-            <tr>
-                <td className="input">
-                    <label for="mail"><b>Gmail:: </b></label>
-                </td>
-                <td className="input">
-                <input type='mail' name='mail' placeholder='Enter email' onChange={(e)=>sgmail(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td className="input">
-                <label for="password"><b>Password:: </b></label>
-                </td>
-                <td className="input">
-                <input type='password' name='password' placeholder='Enter password' onChange={(e)=>spassword(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td className="input">
-                <label for="cpassword"><b>Confirm Password::</b></label>
-                </td>
-                <td className="input">
-                <input type='password' name='cpassword' placeholder='Enter your password' onChange={(e)=>scpassword(e.target.value)}></input>
-                </td>
-            </tr>
-            <tr>
-                <td colSpan={2} style={{color:"red",paddingTop:'2vh'}} align="center"><b>{err}</b></td>
-            </tr>
-            <tr>
-                <td className="input" style={{paddingBottom:'5vh'}} colSpan={2}>
-                <button style={{backgroundColor:'greenyellow'}} onClick={Updtshow}><b>Up</b></button>
-                </td>
-            </tr>
-        </table>
+        <div className="register">
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label for="gmail">Email </Form.Label>
+                            <Form.Control type="email" id="gmail" placeholder="Enter email" onChange={(e)=>sgmail(e.target.value)} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label for='password'>Password</Form.Label>
+                            <Form.Control type="password" id="password" placeholder="Enter Password" onChange={(e)=>spassword(e.target.value)}/>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label for='cpassword'>Confirm Password</Form.Label>
+                            <Form.Control type="password" id="cpassword" placeholder="Enter Confirm Password" onChange={(e)=>scpassword(e.target.value)}/>
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.Text style={{color:"red"}}>{err}</Form.Text>
+                        </Form.Group>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Button variant="primary" onClick={Updtshow}>Update</Button>
+                        </div>
+                        <br/>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <Button href="/192.0809.05" variant="primary" type="submit">Login</Button>
+                    </div>
+                    </Form>
+                </div>
         </div>    
         </>
     )

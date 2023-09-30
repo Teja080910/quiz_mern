@@ -64,7 +64,7 @@ const Coding=()=>
         const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
        if(details.data)
        {
-        nav('/myscore')
+        nav('/192.0809.14')
        }
     }
     useEffect(()=>

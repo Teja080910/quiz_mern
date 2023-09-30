@@ -2,23 +2,14 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useNavigate } from "react-router-dom";
 const Headbar=()=>
 {
-    const nav=useNavigate();
-    const name=localStorage.name;
-    const Home=async()=>
+    const name=sessionStorage.name;
+    const gmail=sessionStorage.gmail
+    const Logout=async()=>
     {
-        nav('/')
-    }
-    const About=async()=>
-    {
-        nav('/about')
-    }
-    const Myapps=async()=>
-    {
-        nav('/gamep')
+      sessionStorage.removeItem("gmail");
+      window.location="/192.0809.05"
     }
     return(
         <div className="header">
@@ -28,9 +19,8 @@ const Headbar=()=>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav.Link href="/192.0809.06">Games</Nav.Link>
+            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -43,18 +33,15 @@ const Headbar=()=>
             </NavDropdown> */}
           </Nav>
           <Nav>
-            <Nav.Link href="/192.0809.00">Login</Nav.Link>
-            <Nav.Link eventKey={2} href="/192.0809.08">About</Nav.Link>
+            <Nav.Link>{name}</Nav.Link>
+            {
+              gmail?<Nav.Link onClick={Logout}>Logout</Nav.Link>:<Nav.Link href="/192.0809.00">Login</Nav.Link>
+            }
+            <Nav.Link eventKey={2} href="/192.0809.13">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-            {/* <div className="headn">
-            <div style={{fontFamily:'Satisfy',color:'green'}}><b>welcome:{name}</b></div>
-            <button style={{marginLeft:'60%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={Home}><b>Home</b></button>
-            <button style={{marginLeft:'5%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={About}><b>About</b></button>
-            <button style={{marginLeft:'3%',background:'none',width:'80px',border:'none',color:'blue'}} onClick={Myapps}><b>My Games</b></button>
-            </div> */}
         </div>
     )
 }

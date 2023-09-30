@@ -1,37 +1,35 @@
 /* head and foot */
 /* Header */
 .header {
-  background-color: #e0c2c2;
-  color:blue;
-  height: 8vh;
+  width: 100%;
+  height: 7.5vh;
 }
-.headn
+body
+{
+  width: 100%;
+}
+/* .headn
 {
   font-size:30px;
   display: flex;
   padding: 1% 0% 0% 3%;
-}
+} */
 /* Footer */
 .footer {
-  background-color: #e0c2c2;
   color: #fff;
+  width: 100%;
   padding: 2vh;
-  margin-top: -0.5%;
   display: flex;
+  justify-content: space-around;
 }
 /* error page */
 .err
 {
   text-align: center;
   padding-bottom: 35.2vh;
+  height: 84.5vh;
 }
 /* Responsive styles */
-@media only screen and (max-width: 600px) {
-  header, footer {
-    padding: 10px;
-    font-size: 16px;
-  }
-}
 
 /* about */
 .about
@@ -85,6 +83,23 @@
   background-image: url(register.jpeg);
   background-size: 100% 100vh;
 }
+.register
+{
+  width: 40%;
+  height: 70vh;
+  background-color:aliceblue;
+  position: absolute;
+  margin:10vh 30%;
+}
+.login
+{
+  width: 30%;
+  height: 50vh;
+  background-color:aliceblue;
+  position: absolute;
+  margin:20vh 35%;
+}
+
 .tabledata
 {
   width: 25%;
@@ -105,6 +120,8 @@
 .lbtn
 {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 .lbtnr
 {
@@ -113,18 +130,16 @@
 .btn1
 {
   width: 50%;
-  height: 44.4vh;
+  height: 44vh;
   background-color: aqua;
-  display: inline-flex;
   background-image: url(coding.jpg);
   background-size: 100% 44vh;
   background-repeat: no-repeat;
 }
 .btn2
 {
-  display: inline-flex;
   width: 50%;
-  height: 44.4vh;
+  height: 44vh;
   background-color: aquamarine;
   background-image: url(sp.jpg);
   background-size: 100% 44vh;
@@ -133,7 +148,7 @@
 .btn3
 {
   width: 50%;
-  height: 44.4vh;
+  height: 44vh;
   display: inline-block;
   background-image: url(CA.jpg);
   background-size: 100% 44vh;
@@ -142,7 +157,7 @@
 .btn4
 {
   width: 50%;
-  height: 44.4vh;
+  height: 44vh;
   display: inline-block;
   background-image: url(entertainment.jpg);
   background-size: 100% 44vh;
@@ -153,10 +168,10 @@
 {
   position: absolute;
   width: 10%;
-  height: 8vh;
+  height: 5vh;
   margin: 21vh 20% 21vh 20%;
   background-color:gold;
-  opacity: 90%;
+  /* opacity: 90%; */
   border:none;
 }
 /* game */
@@ -199,10 +214,10 @@
 /* adlog page */
 .adbtn1
 {
-  width: 12%;
+  /* width: 12%; */
   height: 10vh;
   background-color:greenyellow;
-  font-size: x-large;
+  /* font-size: x-large; */
   color:green;
   border-radius: 50%;
   margin: 44vh 45vh 45vh 20%;
@@ -210,10 +225,10 @@
 }
 .adbtn2
 {
-  width: 12%;
+  /* width: 12%; */
   height: 10vh;
   background-color:yellow;
-  font-size: x-large;
+  /* font-size: x-large; */
   color:blue;
   border-radius: 50%;
   margin: 44vh 45vh 45vh 67%;

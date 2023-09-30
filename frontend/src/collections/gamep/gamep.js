@@ -1,82 +1,74 @@
 import axios from "axios";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import Button from "react-bootstrap/esm/Button";
 import Headbar from "../head/head";
 const Gamep=()=>
 {
-    const gmail=localStorage.gmail;
-    const nav=useNavigate();
-    const Coding=async()=>
+    const gml=sessionStorage.gmail;
+    useEffect(()=>
     {
-        localStorage.game="coding";
-        const res=await axios.post("http://localhost:8000/codingboard/"+gmail)
-        if(res.data)
+        axios.post("http://localhost:8000/codingboard/"+gml)
+        .then((res)=>
         {
-            nav('/myscore')
-        }
-        else
+            if (res) {
+                sessionStorage.coding = res.data.gmail
+            }
+            else
+            {
+                sessionStorage.removeItem("coding");
+            }
+        })
+        .catch()
+        axios.post("http://localhost:8000/currentboard/"+gml)
+        .then((res)=>
         {
-            nav('/codinggame')
-        }
-    }
-    const Current=async()=>
-    {
-        localStorage.game="current";
-        const res=await axios.post("http://localhost:8000/currentboard/"+gmail)
-        if(res.data)
+            if (res.data) {
+                sessionStorage.current = res.data.gmail
+            }
+            else
+            {
+                sessionStorage.removeItem("current")
+            }
+        })
+        .catch()
+        axios.post("http://localhost:8000/sportsboard/"+gml)
+        .then((res)=>
         {
-            nav('/myscore')
-        }
-        else
+            if (res.data) {
+                sessionStorage.sports = res.data.gmail
+            }
+            else
+            {
+                sessionStorage.removeItem("sports");
+            }
+        })
+        .catch()
+        axios.post("http://localhost:8000/entertineboard/"+gml)
+        .then((res)=>
         {
-            nav("/currentgame")
-        }
-    }
-    const Sports=async()=>
-    {
-        localStorage.game="sports";
-        const res=await axios.post("http://localhost:8000/sportsboard/"+gmail)
-        if(res.data)
-        {
-            nav('/myscore')
-        }
-        else
-        {
-            nav("/sportsgame")
-        }
-    }
-    const Entertine=async()=>
-    {
-        localStorage.game="entertine";
-        const res=await axios.post("http://localhost:8000/entertineboard/"+gmail)
-        if(res.data)
-        {
-            nav('/myscore')
-        }
-        else
-        {
-            nav("/entertinegame")
-        }
-    }
+            if (res.data) {
+                sessionStorage.entertine = res.data.gmail
+            }
+            else
+            {
+                sessionStorage.removeItem("entertine");
+            }
+        })
+        .catch()
+    })
     return(
         <>
         <Headbar/>
+       <div style={{width:'100%'}}>
        <div className="lbtn">
-        <div className="btn1">
-            <button className="gbtn" onClick={Coding}><b>Enter</b></button>
-        </div>
-        <div className="btn2">
-        <button className="gbtn" onClick={Sports}><b>Enter</b></button>
-        </div>
+        <Button className="btn1" href="/192.0809.07"><b>Coding Game</b></Button>
+        <Button className="btn2" href="/192.0809.09" style={{color:'black'}}><b>Sports Game</b></Button>
         </div>
         <div className="lbtnr">
-        <div className="btn3">
-        <button className="gbtn" onClick={Current}><b>Enter</b></button>
+        <Button className="btn3" href="/192.0809.08"><b>Current Affair</b></Button>
+        <Button className="btn4" href="/192.0809.10"><b>Entertine Game</b></Button>
         </div>
-        <div className="btn4">
-        <button className="gbtn" onClick={Entertine}><b>Enter</b></button>
-        </div>
-        </div>
+       </div>
         </>
     )
 }

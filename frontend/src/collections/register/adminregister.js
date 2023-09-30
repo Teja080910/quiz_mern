@@ -24,7 +24,7 @@ const Adminregister=()=>{
                 {
                     if(responce.data)   
                     {
-                        nav("/gameinput")
+                        nav("/192.0809.04")
                     }
                     else
                     {

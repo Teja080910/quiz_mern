@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import Headbar from '../head/head';
 const Start=()=>
 {
+    var a=5;
+    console.log(a+"3");
     const move=useNavigate();
     const ready=async()=>
     {
-        move("/adlog")
+        move("/192.0809.00")
     }
     return(
         <>

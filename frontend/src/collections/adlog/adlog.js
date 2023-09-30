@@ -1,23 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Headbar1 from '../head/head1';
+import Headbar from '../head/head';
+import Button from 'react-bootstrap/esm/Button';
 const Adlog=()=>
 {
     const nav=useNavigate();
     const Admin=()=>
     {
-        nav('/adminlogin');
+        nav('/192.0809.01');
     }
     const User=()=>
     {
-        nav("/login");
+        nav("/192.0809.05");
     }
     return(
         <>
-        <Headbar1/>
+        <Headbar/>
             <div className='regi'>
-                <button className='adbtn1' onClick={Admin}><b>ADMIN</b></button>
-                <button className='adbtn2' onClick={User}><b>USER</b></button>
+                <Button className='adbtn1' onClick={Admin}><b>ADMIN</b></Button>
+                <Button className='adbtn2' onClick={User}><b>USER</b></Button>
             </div>
         </>
     )
