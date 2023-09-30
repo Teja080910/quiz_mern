@@ -14,11 +14,17 @@ const Coding=()=>
     const name1=sessionStorage.name;
     const Marks=async()=>
     {
-       const res=await axios.post("https://quiz-server-1q3b.onrender.com/codingans/"+crt)       
-        if(res.data.correct_answer===crt)
+        console.log(crt)
+       await axios.post("https://quiz-server-1q3b.onrender.com/codingcheckans/"+crt)
+       .then((res)=>
+       {
+        console.log(res.data)
+        if(res.data.correct_answer)
         {
             sc(c+1)
+            console.log(c)
         }
+       })
         if(typeof(crt)!=="object")
         {
             document.getElementById(bg.question).innerHTML = "Submited";
@@ -64,7 +70,7 @@ const Coding=()=>
      </div>
       ))}
     </div>
-    <div><Button style={{backgroundColor:'yellow',width:'15vh',height:'5vh',margin:"2% 0% 2% 36%"}} onClick={Score}>Score</Button></div>
+    <div><Button style={{backgroundColor:'yellow',color:'black',width:'15vh',height:'5vh',margin:"2% 0% 2% 36%"}} onClick={Score}>Score</Button></div>
         </div>
         </div>
         </>

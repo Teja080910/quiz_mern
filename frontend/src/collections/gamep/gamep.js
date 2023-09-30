@@ -13,6 +13,7 @@ const Gamep=()=>
         {
             if(res.data) {
                 sessionStorage.coding = res.data.gmail
+                window.location="/192.0809.07";
             }
             else
             {
@@ -48,6 +49,7 @@ const Gamep=()=>
             // console.log(res)
             if (res.data) {
                 sessionStorage.sports = res.data.gmail
+                window.location="/192.0809.09"
             }
             else
             {

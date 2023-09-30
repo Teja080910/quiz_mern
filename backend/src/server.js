@@ -66,8 +66,9 @@ app.post('/coding',async(req,res)=>{
     const details=await db.collection('codingdata').find().toArray()
     res.json(details);
 })
-app.post('/codingans/:canswer',async(req,res) => {
+app.post('/codingcheckans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
+    console.log(details)
     res.json(details);
 })
 app.post("/codingboard/:gmail/:name/:score",async(req,res)=>{
@@ -101,7 +102,7 @@ app.post('/sports',async(req,res)=>{
     const details=await db.collection('sportsdata').find().toArray()
     res.json(details);
 })
-app.post('/sportsans/:canswer',async(req,res) => {
+app.post('/sportscheckans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
@@ -137,7 +138,7 @@ app.post('/current',async(req,res)=>{
     const details=await db.collection('cafdata').find().toArray()
     res.json(details);
 })
-app.post('/currentans/:canswer',async(req,res) => {
+app.post('/currentcheckans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
@@ -178,7 +179,7 @@ app.post('/entertine',async(req,res)=>{
     const details=await db.collection('entrdata').find().toArray()
     res.json(details);
 })
-app.post('/entertineans/:canswer',async(req,res) => {
+app.post('/entertinecheckans/:canswer',async(req,res) => {
     const details = await db.collection('answersdata').findOne({correct_answer:req.params.canswer})
     res.json(details);
 })
