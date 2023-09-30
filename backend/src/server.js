@@ -48,6 +48,7 @@ app.post('/adminregister/:name/:gmail/:password/:cpassword',async(req,res)=>{
     res.json(details);
 })
 //game input data//
+
 //coding game//
 app.post('/coding/:question/:answer1/:answer2/:answer3',async(req,res) => {
     const details = await db.collection('codingdata').insertOne({question:req.params.question,answer1:req.params.answer1,answer2:req.params.answer2,answer3:req.params.answer3});

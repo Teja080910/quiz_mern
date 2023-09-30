@@ -5,21 +5,27 @@ import Headbar from "../head/head";
 const Gamep=()=>
 {
     const gml=sessionStorage.gmail;
-    useEffect(()=>
+    const Coding=async()=>
     {
-        axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gml)
+        sessionStorage.game="coding"
+        await axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gml)
         .then((res)=>
         {
-            if (res) {
+            if(res.data) {
                 sessionStorage.coding = res.data.gmail
             }
             else
             {
                 sessionStorage.removeItem("coding");
+                window.location="/192.0809.07";
             }
         })
-        .catch()
-        axios.post("https://quiz-server-1q3b.onrender.com/currentboard/"+gml)
+        .catch((e)=>console.log(e))
+    }
+    const Current=async()=>
+    {
+        sessionStorage.game="current"
+        await axios.post("https://quiz-server-1q3b.onrender.com/currentboard/"+gml)
         .then((res)=>
         {
             if (res.data) {
@@ -28,22 +34,33 @@ const Gamep=()=>
             else
             {
                 sessionStorage.removeItem("current")
+                window.location='/192.0809.08'
             }
         })
         .catch()
-        axios.post("https://quiz-server-1q3b.onrender.com/sportsboard/"+gml)
+    }
+    const Sports=async()=>
+    {
+        sessionStorage.game="sports"
+        await axios.post("https://quiz-server-1q3b.onrender.com/sportsboard/"+gml)
         .then((res)=>
         {
+            // console.log(res)
             if (res.data) {
                 sessionStorage.sports = res.data.gmail
             }
             else
             {
                 sessionStorage.removeItem("sports");
+                window.location="/192.0809.09"
             }
         })
         .catch()
-        axios.post("https://quiz-server-1q3b.onrender.com/entertineboard/"+gml)
+    }
+    const Entertine=async()=>
+    {
+        sessionStorage.game="entertine"
+        await axios.post("https://quiz-server-1q3b.onrender.com/entertineboard/"+gml)
         .then((res)=>
         {
             if (res.data) {
@@ -52,21 +69,22 @@ const Gamep=()=>
             else
             {
                 sessionStorage.removeItem("entertine");
+                window.location='/192.0809.10';
             }
         })
         .catch()
-    })
+    }
     return(
         <>
         <Headbar/>
        <div style={{width:'100%'}}>
        <div className="lbtn">
-        <Button className="btn1" href="/192.0809.07" onClick={(e)=>{sessionStorage.game="coding"}}><b>Coding Game</b></Button>
-        <Button className="btn2" href="/192.0809.09" style={{color:'black'}} onClick={(e)=>{sessionStorage.game="sports"}}><b>Sports Game</b></Button>
+        <Button className="btn1"  onClick={Coding}><b>Coding Game</b></Button>
+        <Button className="btn2"  style={{color:'black'}} onClick={Sports}><b>Sports Game</b></Button>
         </div>
         <div className="lbtnr">
-        <Button className="btn3" href="/192.0809.08" onClick={(e)=>{sessionStorage.game="current"}}><b>Current Affair</b></Button>
-        <Button className="btn4" href="/192.0809.10" onClick={(e)=>{sessionStorage.game="entertine"}}><b>Entertine Game</b></Button>
+        <Button className="btn3"  onClick={Current}><b>Current Affair</b></Button>
+        <Button className="btn4"  onClick={Entertine}><b>Entertine Game</b></Button>
         </div>
        </div>
         </>

@@ -4,6 +4,7 @@ import Headbar from '../head/head';
 import Sbord from './scoreboard';
 const Myscore=()=>
 {
+    console.log(sessionStorage.coding)
     const nav=useNavigate();
     const Lbord=async()=>
     {
