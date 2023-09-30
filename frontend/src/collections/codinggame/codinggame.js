@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
-import Button from "react-bootstrap/esm/Button";
 const Coding=()=>
 {
     const nav=useNavigate();
@@ -20,7 +20,7 @@ const Coding=()=>
             document.getElementById(bg.question).style.backgroundColor="white";
             document.getElementById(bg.question).disabled = true;
         }
-       const res=await axios.post("http://localhost:8000/codingans/"+crt)       
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/codingans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
@@ -28,7 +28,7 @@ const Coding=()=>
         scrt([]);
     }
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
+        const details=await axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gmail1+"/"+name1+"/"+c)
        if(details.data)
        {
         nav('/192.0809.14')
@@ -36,7 +36,7 @@ const Coding=()=>
     }
     useEffect(()=>
 {
-    axios.post("http://localhost:8000/coding")
+    axios.post("https://quiz-server-1q3b.onrender.com/coding")
     .then((result)=>
     {
         sdata(result.data)

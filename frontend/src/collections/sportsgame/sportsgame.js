@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
-import Button from "react-bootstrap/esm/Button";
 const Sports=()=>
 {
     const nav=useNavigate();
@@ -20,7 +20,7 @@ const Sports=()=>
             document.getElementById(bg.question).style.backgroundColor="white";
             document.getElementById(bg.question).disabled = true;
         }
-       const res=await axios.post("http://localhost:8000/sportsans/"+crt)       
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/sportsans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+2)
@@ -32,7 +32,7 @@ const Sports=()=>
         scrt([]);
     }
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/sportsboard/"+gmail1+"/"+name1+"/"+c)
+        const details=await axios.post("https://quiz-server-1q3b.onrender.com/sportsboard/"+gmail1+"/"+name1+"/"+c)
        if(details.data)
        {
         nav('/192.0809.14')
@@ -40,7 +40,7 @@ const Sports=()=>
     }
     useEffect(()=>
 {
-    axios.post("http://localhost:8000/sports")
+    axios.post("https://quiz-server-1q3b.onrender.com/sports")
     .then((result)=>
     {
         sdata(result.data)

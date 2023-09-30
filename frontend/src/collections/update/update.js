@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Headbar from "../head/head";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from "react-router-dom";
+import Headbar from "../head/head";
 const Update=()=>{
     const nav=useNavigate();
     const [gmail,sgmail]=useState("");
@@ -14,14 +14,14 @@ const Update=()=>{
     const Updtshow=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce1=await axios.post("http://localhost:8000/check/"+gmail);
+            const responce1=await axios.post("https://quiz-server-1q3b.onrender.com/check/"+gmail);
         if(responce1.data)
         {
             if((password.length)>7)
                {
                 if(password===cpassword)
                 {
-                    const responce=await axios.post("http://localhost:8000/update/"+gmail+"/"+password+"/"+cpassword)
+                    const responce=await axios.post("https://quiz-server-1q3b.onrender.com/update/"+gmail+"/"+password+"/"+cpassword)
                     if(responce.data)
                         {
                              nav('/192.0809.05');  

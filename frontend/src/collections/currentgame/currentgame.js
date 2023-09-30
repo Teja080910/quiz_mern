@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import Headbar from "../head/head";
-import Button from "react-bootstrap/esm/Button";
 const Current=()=>
 {
     const nav=useNavigate();
@@ -20,7 +20,7 @@ const Current=()=>
             document.getElementById(bg.question).style.backgroundColor="white";
             document.getElementById(bg.question).disabled = true;
         }
-       const res=await axios.post("http://localhost:8000/currentans/"+crt)
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/currentans/"+crt)
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
@@ -28,7 +28,7 @@ const Current=()=>
         scrt([]);
     }
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/currentboard/"+gmail1+"/"+name1+"/"+c)
+        const details=await axios.post("https://quiz-server-1q3b.onrender.com/currentboard/"+gmail1+"/"+name1+"/"+c)
        if(details.data)
        {
         nav('/192.0809.14')
@@ -36,7 +36,7 @@ const Current=()=>
     }
     useEffect(()=>
 {
-    axios.post("http://localhost:8000/current")
+    axios.post("https://quiz-server-1q3b.onrender.com/current")
     .then((result)=>
     {
         sdata(result.data)

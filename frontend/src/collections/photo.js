@@ -49,7 +49,7 @@ const Coding=()=>
     //     sscr(scr+1)
     //     si(1)
     //    }
-       const res=await axios.post("http://localhost:8000/codingans/"+crt)       
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/codingans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+2)
@@ -61,7 +61,7 @@ const Coding=()=>
         }
     }
     const Score=async()=>{
-        const details=await axios.post("http://localhost:8000/codingboard/"+gmail1+"/"+name1+"/"+c)
+        const details=await axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gmail1+"/"+name1+"/"+c)
        if(details.data)
        {
         nav('/192.0809.14')
@@ -69,7 +69,7 @@ const Coding=()=>
     }
     useEffect(()=>
 {
-    axios.post("http://localhost:8000/coding")
+    axios.post("https://quiz-server-1q3b.onrender.com/coding")
     .then((result)=>
     {
         sdata(result.data)
@@ -129,7 +129,7 @@ export default Coding;
 //     const[data,sdata]=useState([]);
 //     // const Upload=async()=>
 //     // {
-//     //     const res=await axios.post("http://localhost:8000/currentans/"+images)
+//     //     const res=await axios.post("https://quiz-server-1q3b.onrender.com/currentans/"+images)
 //     //     if(res.data)
 //     //     {
 //     //         alert("insert")
@@ -137,7 +137,7 @@ export default Coding;
 //     // }
 //     useEffect(()=>
 //     {
-//         axios.post("http://localhost:8000/currentans")
+//         axios.post("https://quiz-server-1q3b.onrender.com/currentans")
 //         .then((result)=>
 //         {
 //             console.log(result.data)

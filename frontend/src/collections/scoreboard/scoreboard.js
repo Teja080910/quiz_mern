@@ -7,7 +7,7 @@ const Sbord=()=>
     const game=sessionStorage.game;
     if(game==="coding")
     {
-    axios.post("http://localhost:8000/codingboard/"+name)
+    axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+name)
     .then((res1)=>
     {
        sc(res1.data.score)
@@ -16,7 +16,7 @@ const Sbord=()=>
     }
     else if(game==="current")
    {
-    axios.post("http://localhost:8000/currentboard/"+name)
+    axios.post("https://quiz-server-1q3b.onrender.com/currentboard/"+name)
     .then((res2)=>
     {
        sc(res2.data.score)
@@ -25,7 +25,7 @@ const Sbord=()=>
    }
    else if(game==="sports")
    {
-    axios.post("http://localhost:8000/sportsboard/"+name)
+    axios.post("https://quiz-server-1q3b.onrender.com/sportsboard/"+name)
     .then((res3)=>
     {
        sc(res3.data.score)
@@ -34,7 +34,7 @@ const Sbord=()=>
    }
    else
    {
-    axios.post("http://localhost:8000/entertineboard/"+name)
+    axios.post("https://quiz-server-1q3b.onrender.com/entertineboard/"+name)
     .then((res4)=>
     {
        sc(res4.data.score)

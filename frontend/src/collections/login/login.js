@@ -11,7 +11,7 @@ const Login=()=>{
     const Login=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce=await axios.post("http://localhost:8000/login/"+gmail+"/"+password);
+            const responce=await axios.post("https://quiz-server-1q3b.onrender.com/login/"+gmail+"/"+password);
             if(responce.data)
         {
             sessionStorage.name=responce.data.name;

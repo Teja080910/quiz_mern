@@ -7,7 +7,7 @@ const Gamep=()=>
     const gml=sessionStorage.gmail;
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/codingboard/"+gml)
+        axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gml)
         .then((res)=>
         {
             if (res) {
@@ -19,7 +19,7 @@ const Gamep=()=>
             }
         })
         .catch()
-        axios.post("http://localhost:8000/currentboard/"+gml)
+        axios.post("https://quiz-server-1q3b.onrender.com/currentboard/"+gml)
         .then((res)=>
         {
             if (res.data) {
@@ -31,7 +31,7 @@ const Gamep=()=>
             }
         })
         .catch()
-        axios.post("http://localhost:8000/sportsboard/"+gml)
+        axios.post("https://quiz-server-1q3b.onrender.com/sportsboard/"+gml)
         .then((res)=>
         {
             if (res.data) {
@@ -43,7 +43,7 @@ const Gamep=()=>
             }
         })
         .catch()
-        axios.post("http://localhost:8000/entertineboard/"+gml)
+        axios.post("https://quiz-server-1q3b.onrender.com/entertineboard/"+gml)
         .then((res)=>
         {
             if (res.data) {

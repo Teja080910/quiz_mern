@@ -9,89 +9,89 @@ const Gameinput=()=>{
     const [ans4,sans4]=useState('');
     const codingans=async()=>
     {
-        await axios.post("http://localhost:8000/codingans/"+ans4);
+        await axios.post("https://quiz-server-1q3b.onrender.com/codingans/"+ans4);
         alert("sucessfully insert")
     }
     const currentans=async()=>
     {
-        await axios.post("http://localhost:8000/currentans/"+ans4);
+        await axios.post("https://quiz-server-1q3b.onrender.com/currentans/"+ans4);
         alert("sucessfully insert")
     }
     const sportsans=async()=>
     {
-        await axios.post("http://localhost:8000/sportsans/"+ans4);
+        await axios.post("https://quiz-server-1q3b.onrender.com/sportsans/"+ans4);
         alert("sucessfully insert")
     }
     const entertineans=async()=>
     {
-        await axios.post("http://localhost:8000/entertineans/"+ans4);
+        await axios.post("https://quiz-server-1q3b.onrender.com/entertineans/"+ans4);
         alert("sucessfully insert")
     }
     const coding=async()=>{
-        const result=await axios.post("http://localhost:8000/coding/"+ques)
+        const result=await axios.post("https://quiz-server-1q3b.onrender.com/coding/"+ques)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.post("http://localhost:8000/delcoding")
+            axios.post("https://quiz-server-1q3b.onrender.com/delcoding")
             .then((res)=>
             {
                 console.log("delete coding score")
             })
-        await axios.post("http://localhost:8000/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        await axios.post("https://quiz-server-1q3b.onrender.com/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
         alert("sucessfully insert")
         }
     }
     const sports=async()=>{
-        const result=await axios.post("http://localhost:8000/sports/"+id)
+        const result=await axios.post("https://quiz-server-1q3b.onrender.com/sports/"+id)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.post("http://localhost:8000/delsports")
+            axios.post("https://quiz-server-1q3b.onrender.com/delsports")
             .then((res)=>
             {
                 console.log("delete sports score")
             })
-        await axios.post("http://localhost:8000/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
+        await axios.post("https://quiz-server-1q3b.onrender.com/sports/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
         alert("sucessfully insert")
         }
     }
     const current=async()=>{
-        const result=await axios.post("http://localhost:8000/current/"+ques)
+        const result=await axios.post("https://quiz-server-1q3b.onrender.com/current/"+ques)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-        axios.post("http://localhost:8000/delcurrent")
+        axios.post("https://quiz-server-1q3b.onrender.com/delcurrent")
         .then((res)=>
         {
             console.log("delete current score")
         })
-        await axios.post("http://localhost:8000/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
+        await axios.post("https://quiz-server-1q3b.onrender.com/current/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
         alert("sucessfully insert")
         }
     }
     const entertine=async()=>{
-        const result=await axios.post("http://localhost:8000/entertine/"+id)
+        const result=await axios.post("https://quiz-server-1q3b.onrender.com/entertine/"+id)
         if(result.data)
         {
             alert("question already exist")
         }
         else
         {
-            axios.post("http://localhost:8000/delentertine")
+            axios.post("https://quiz-server-1q3b.onrender.com/delentertine")
         .then((res)=>
         {
             console.log("delete entertine score")
         })
-         const responce=await axios.post("http://localhost:8000/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
+         const responce=await axios.post("https://quiz-server-1q3b.onrender.com/entertine/"+id+"/"+ans1+"/"+ans2+"/"+ans3);
         console.log(responce.data);
         alert("sucessfully insert")
         }

@@ -12,14 +12,14 @@ const Adminregister=()=>{
     const Show=async()=>{
         if(emailtest.test(gmail))
         {
-            const responce1=await axios.post("http://localhost:8000/admincheck/"+gmail)
+            const responce1=await axios.post("https://quiz-server-1q3b.onrender.com/admincheck/"+gmail)
             if(responce1.data)
             {
                 serr("Mail already Exist")
             }
             else
             {
-                const responce=await axios.post("http://localhost:8000/adminregister/"+name+"/"+gmail+"/"+password+"/"+cpassword)
+                const responce=await axios.post("https://quiz-server-1q3b.onrender.com/adminregister/"+name+"/"+gmail+"/"+password+"/"+cpassword)
                 if(password === cpassword)
                 {
                     if(responce.data)   
