@@ -4,7 +4,7 @@ const Sbord=()=>
 {
     const[c,sc]=useState('');
     const name=localStorage.gmail;
-    const game=localStorage.game;
+    const game=sessionStorage.game;
     if(game==="coding")
     {
     axios.post("http://localhost:8000/codingboard/"+name)

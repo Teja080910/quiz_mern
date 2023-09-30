@@ -7,7 +7,7 @@ const Leader=()=>
     const[data,sdata]=useState([]);
     useEffect(()=>
     {
-        const game=localStorage.game;
+        const game=sessionStorage.game;
         if(game==="coding")
         {
             axios.post("http://localhost:8000/codingboard")
@@ -15,6 +15,7 @@ const Leader=()=>
         {
             sdata(res.data.sort((a,b)=>b.score-a.score))
         })
+        .catch()
         }
         else if(game==="current")
         {
@@ -34,7 +35,7 @@ const Leader=()=>
         })
         .catch((err)=>console.log(err))
         }
-        else
+        else if(game==="entertine")
         {
             axios.post("http://localhost:8000/entertineboard")
             .then((res)=>

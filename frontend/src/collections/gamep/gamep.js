@@ -61,12 +61,12 @@ const Gamep=()=>
         <Headbar/>
        <div style={{width:'100%'}}>
        <div className="lbtn">
-        <Button className="btn1" href="/192.0809.07"><b>Coding Game</b></Button>
-        <Button className="btn2" href="/192.0809.09" style={{color:'black'}}><b>Sports Game</b></Button>
+        <Button className="btn1" href="/192.0809.07" onClick={(e)=>{sessionStorage.game="coding"}}><b>Coding Game</b></Button>
+        <Button className="btn2" href="/192.0809.09" style={{color:'black'}} onClick={(e)=>{sessionStorage.game="sports"}}><b>Sports Game</b></Button>
         </div>
         <div className="lbtnr">
-        <Button className="btn3" href="/192.0809.08"><b>Current Affair</b></Button>
-        <Button className="btn4" href="/192.0809.10"><b>Entertine Game</b></Button>
+        <Button className="btn3" href="/192.0809.08" onClick={(e)=>{sessionStorage.game="current"}}><b>Current Affair</b></Button>
+        <Button className="btn4" href="/192.0809.10" onClick={(e)=>{sessionStorage.game="entertine"}}><b>Entertine Game</b></Button>
         </div>
        </div>
         </>

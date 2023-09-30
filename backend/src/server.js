@@ -5,7 +5,7 @@ const app=express();
 app.use(express.json());
 app.use(cors());
 //check server//
-app.post('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("server running")
 })
 //user data server//
