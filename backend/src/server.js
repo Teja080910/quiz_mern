@@ -72,7 +72,7 @@ app.post('/codingcheckans/:canswer',async(req,res) => {
     res.json(details);
 })
 app.post("/codingboard/:gmail/:name/:score",async(req,res)=>{
-    const details=await db.collection('codingscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    const details=await db.collection('codingscore').findOneAndUpdate({gmail:req.params.gmail,name:req.params.name},{score:req.params.score})
     res.json(details);
 })
 app.post("/codingboard/:name",async(req,res)=>{
@@ -107,7 +107,7 @@ app.post('/sportscheckans/:canswer',async(req,res) => {
     res.json(details);
 })
 app.post("/sportsboard/:gmail/:name/:score",async(req,res)=>{
-    const details=await db.collection('sportsscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    const details=await db.collection('sportsscore').findOneAndUpdate({gmail:req.params.gmail,name:req.params.name},{score:req.params.score})
     res.json(details);
 })
 app.post("/sportsboard/:name",async(req,res)=>{
@@ -147,7 +147,7 @@ app.post('/currentcheckans/:canswer',async(req,res) => {
 //     res.json(details);
 // })
 app.post("/currentboard/:gmail/:name/:score",async(req,res)=>{
-    const details=await db.collection('currentscore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    const details=await db.collection('currentscore').findOneAndUpdate({gmail:req.params.gmail,name:req.params.name},{score:req.params.score})
     res.json(details);
 })
 app.post("/currentboard/:name",async(req,res)=>{
@@ -184,7 +184,7 @@ app.post('/entertinecheckans/:canswer',async(req,res) => {
     res.json(details);
 })
 app.post("/entertineboard/:gmail/:name/:score",async(req,res)=>{
-    const details=await db.collection('entertinescore').insertOne({gmail:req.params.gmail,name:req.params.name,score:req.params.score})
+    const details=await db.collection('entertinescore').findOneAndUpdate({gmail:req.params.gmail,name:req.params.name},{score:req.params.score})
     res.json(details);
 })
 app.post("/entertineboard/:name",async(req,res)=>{
@@ -195,6 +195,8 @@ app.post('/entertineboard',async(req,res)=>{
     const details=await db.collection('entertinescore').find().toArray()
     res.json(details);
 })
+
+
 //delete data//
 app.post('/delcoding',async(req,res)=>{
     const details=await db.collection('codingscore').deleteMany()
