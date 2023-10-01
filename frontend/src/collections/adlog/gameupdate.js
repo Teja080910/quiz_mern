@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-const Gameinput=()=>{
+const Gameupdate=()=>{
     const [id,sid]=useState("");
     const [ques,sques]=useState("");
+    const [ans,sans]=useState([]);
     const [ans1,sans1]=useState('');
     const [ans2,sans2]=useState('');
     const [ans3,sans3]=useState('');
@@ -31,17 +32,12 @@ const Gameinput=()=>{
         const result=await axios.post("https://quiz-server-1q3b.onrender.com/coding/"+ques)
         if(result.data)
         {
-            alert("question already exist")
+            // console.log(result.data)
+            sans(result.data)
         }
         else
         {
-            axios.post("https://quiz-server-1q3b.onrender.com/delcoding")
-            .then((res)=>
-            {
-                console.log("delete coding score")
-            })
-        await axios.post("https://quiz-server-1q3b.onrender.com/coding/"+ques+"/"+ans1+"/"+ans2+"/"+ans3);
-        alert("sucessfully insert")
+            alert("not found")
         }
     }
     const sports=async()=>{
@@ -103,14 +99,14 @@ const Gameinput=()=>{
         <h2>Coding data</h2>
         <input type="text" name="ques" placeholder="enter question" onChange={(e)=>sques(e.target.value)}></input>
         <br></br>
-        <input type="text" name="answer" placeholder="Enter answer 1" onChange={(e)=>sans1(e.target.value)}></input><br></br>
-        <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
-        <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
+        <input type="text" name="answer" placeholder="Enter answer 1" value={ans.answer1} onChange={(e)=>sans1(e.target.value)}></input><br></br>
+        <input type="text" name="answer" placeholder="Enter answer 2" value={ans.answer2} onChange={(e)=>sans2(e.target.value)}></input><br></br>
+        <input type="text" name="answer" placeholder="Enter answer 3" value={ans.answer3} onChange={(e)=>sans3(e.target.value)}></input><br></br>
         <button onClick={coding}>insert</button><br></br>
         Choose Answer<select onChange={(e)=>sans4(e.target.value)}>
-            <option>{ans1}</option>
-            <option>{ans2}</option>
-            <option>{ans3}</option>
+            <option value={ans.answer1}>{ans.answer1}</option>
+            <option value={ans.answer2}>{ans.answer2}</option>
+            <option value={ans.answer3}>{ans.answer3}</option>
         </select>
         <br></br>
         <button onClick={codingans}>insert</button>
@@ -124,7 +120,7 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
         <button onClick={sports}>insert</button><br></br>
-        Choose Answer<select onChange={(e)=>sans4(e.target.value)}>
+        <select onChange={(e)=>sans4(e.target.value)}> Choose Answer
             <option>{ans1}</option>
             <option>{ans2}</option>
             <option>{ans3}</option>
@@ -140,7 +136,7 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
         <button onClick={current}>insert</button><br></br>
-        Choose Answer<select onChange={(e)=>sans4(e.target.value)}>
+        <select onChange={(e)=>sans4(e.target.value)}> Choose Answer
             <option>{ans1}</option>
             <option>{ans2}</option>
             <option>{ans3}</option>
@@ -156,7 +152,7 @@ const Gameinput=()=>{
         <input type="text" name="answer" placeholder="Enter answer 2" onChange={(e)=>sans2(e.target.value)}></input><br></br>
         <input type="text" name="answer" placeholder="Enter answer 3" onChange={(e)=>sans3(e.target.value)}></input><br></br>
         <button onClick={entertine}>insert</button><br></br>
-        Choose Answer<select onChange={(e)=>sans4(e.target.value)}>
+        <select onChange={(e)=>sans4(e.target.value)}> Choose Answer
             <option>{ans1}</option>
             <option>{ans2}</option>
             <option>{ans3}</option>
@@ -168,4 +164,4 @@ const Gameinput=()=>{
         </>
     )
 }
-export default Gameinput;
+export default Gameupdate;

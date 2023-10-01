@@ -22,6 +22,7 @@ import B from '../welcome1/welcome1';
 import Wel from '../welocme/weldarling';
 import './App.css';
 import './responsive.css'
+import Gameupdate from '../adlog/gameupdate';
 function App() {
   return (
     <>
@@ -46,6 +47,7 @@ function App() {
       <Route path='/192.0809.14' element={sessionStorage.gmail?<Myscore/>:<Login/>}/>
       <Route path='/192.0809.15' element={sessionStorage.gmail?<Leader/>:<Login/>}/>
       <Route path='/192.0809.16' element={sessionStorage.gmail?<Photo/>:<Login/>}/>
+      <Route path='/192.0809.17' element={<Gameupdate/>}/>
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
     </BrowserRouter> 

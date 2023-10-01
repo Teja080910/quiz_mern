@@ -14,17 +14,12 @@ const Coding=()=>
     const name1=sessionStorage.name;
     const Marks=async()=>
     {
-        console.log(crt)
-       await axios.post("https://quiz-server-1q3b.onrender.com/codingcheckans/"+crt)
-       .then((res)=>
-       {
-        console.log(res.data)
-        if(res.data.correct_answer)
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/codingcheckans/"+crt)       
+        if(res.data.correct_answer===crt)
         {
             sc(c+1)
             console.log(c)
         }
-       })
         if(typeof(crt)!=="object")
         {
             document.getElementById(bg.question).innerHTML = "Submited";

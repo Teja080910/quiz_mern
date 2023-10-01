@@ -20,7 +20,7 @@ const Sports=()=>
             document.getElementById(bg.question).style.backgroundColor="white";
             document.getElementById(bg.question).disabled = true;
         }
-       const res=await axios.post("https://quiz-server-1q3b.onrender.com/sportsans/"+crt)       
+       const res=await axios.post("https://quiz-server-1q3b.onrender.com/sportscheckans/"+crt)       
         if(res.data.correct_answer===crt)
         {
             sc(c+2)
