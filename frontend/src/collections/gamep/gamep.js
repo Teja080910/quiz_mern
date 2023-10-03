@@ -31,6 +31,7 @@ const Gamep=()=>
         {
             if (res.data) {
                 sessionStorage.current = res.data.gmail
+                window.location='/192.0809.08'
             }
             else
             {
@@ -67,6 +68,7 @@ const Gamep=()=>
         {
             if (res.data) {
                 sessionStorage.entertine = res.data.gmail
+                window.location='/192.0809.10';
             }
             else
             {

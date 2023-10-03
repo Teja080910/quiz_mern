@@ -72,7 +72,7 @@ app.post('/codingcheckans/:canswer',async(req,res) => {
     res.json(details);
 })
 app.post("/codingboard/:gmail/:name/:score",async(req,res)=>{
-    const details=await db.collection('codingscore').findOneAndUpdate({gmail:req.params.gmail,name:req.params.name},{score:req.params.score})
+    const details=await db.collection('codingscore').findOneAndUpdate({gmail:req.params.gmail},{name:req.params.name,score:req.params.score})
     res.json(details);
 })
 app.post("/codingboard/:name",async(req,res)=>{

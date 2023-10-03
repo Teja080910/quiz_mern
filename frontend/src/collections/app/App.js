@@ -10,7 +10,7 @@ import Errorpage from '../error/error';
 import Footer from '../footer/footer';
 import Gamep from '../gamep/gamep';
 import Login from '../login/login';
-import Photo from '../photo';
+import {Sample} from '../photo';
 import Adminregister from '../register/adminregister';
 import Register from '../register/register';
 import Leader from '../scoreboard/leaderboard';
@@ -46,7 +46,7 @@ function App() {
       <Route path='/192.0809.13' element={<About/>}/>
       <Route path='/192.0809.14' element={sessionStorage.gmail?<Myscore/>:<Login/>}/>
       <Route path='/192.0809.15' element={sessionStorage.gmail?<Leader/>:<Login/>}/>
-      <Route path='/192.0809.16' element={sessionStorage.gmail?<Photo/>:<Login/>}/>
+      <Route path='/192.0809.16' element={sessionStorage.gmail?<Sample/>:<Login/>}/>
       <Route path='/192.0809.17' element={<Gameupdate/>}/>
       <Route path='*' element={<Errorpage/>}/>
     </Routes>
