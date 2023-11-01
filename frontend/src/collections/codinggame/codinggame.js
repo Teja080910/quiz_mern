@@ -21,20 +21,31 @@ const Coding=()=>
             document.getElementById(bg.question).disabled = true;
             scrt([]);
         }
-       const res=await axios.post("https://quiz-server-1q3b.onrender.com/codingcheckans/"+crt)       
+       await axios.post("https://quiz-server-1q3b.onrender.com/codingcheckans/"+crt)
+       .then((res)=>
+       {
         if(res.data.correct_answer===crt)
         {
             sc(c+1)
-            console.log(c);
+            // console.log(c);
         }
+       })
+       .catch()
     }
     const Score=async()=>
     {
+       try
+       {
         const details=await axios.post("https://quiz-server-1q3b.onrender.com/codingboard/"+gmail1+"/"+name1+"/"+c)
         console.log(details)
        if(details.data)
        {
         // nav('/192.0809.14')
+       }
+       }
+       catch(e)
+       {
+        console.log(e);
        }
     }
     useEffect(()=>
